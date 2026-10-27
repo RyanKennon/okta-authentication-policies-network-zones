@@ -18,8 +18,6 @@
 # Image 2
 # Image 3
 
----
-
 ### Create Test Users
 
 1. Open the **Directory** dropdown then **People**
@@ -49,6 +47,38 @@
   
 # Image 5 hide email
 # Image 6
+
+### Create Test App
+
+1. Open the **Applications and Resources** dropdown then select **Applications** then **Browse App Catalog**
+2. Search for the **Bookmark App** then **Add Integration**
+3. On the **General Settings** page enter the following infomration then press **Done:**
+   - **Application Label:** Kennon Intranet
+   - **URL:** https://example.com
+
+# Image 7
+
+4. Open the **Sign On** tab next to **User Authentication** select **Edit**
+5. For the **Authentication Policy** select **Any Two Factors** then **Save**
+
+# Image 8
+
+6. Open the **Assignments** tab then click the **Assign** dropdown then **Assign to Groups**
+7. Select **Assign for both **AuthPolicy Standard** and **AuthPolicy HighSecurity** then **Done**
+
+# Image 9
+# Image 10
+
+
+
+
+
+
+
+
+
+
+
 
 
 
