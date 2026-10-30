@@ -69,6 +69,70 @@
 # Image 9
 # Image 10
 
+### Confirm Sign In
+
+1. Attempt to log into **Okta** as **Jordan Ellis** in an **Incgonito** browser
+2. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
+
+# Image 11
+
+3. Attempt to log into **Okta** as **Moragn Reyes**
+4. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
+
+# Image 12
+
+### Verify in the System Log
+
+1. Open the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. Use the following search prompt then confirm **Create Users** event appears:
+   `eventType eq "user.lifecycle.create" and target.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 13
+# Image 14
+
+3. Use the following search prompt then confirm **Add to Group** event appears:
+   `eventType eq "group.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 15
+# Image 16
+
+4. Use the following search prompt then confirm **Add to Application** event appears:
+   `eventType eq "application.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 17
+# Image 18
+
+5. Use the following search prompt then confirm **Login Success** event appears:
+   `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 19
+# Image 20
+
+6. Use the following search prompt then confirm **Evaluation of Sign On Policy** event appears:
+   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 21
+# Image 22
+
+7. Use the following search prompt then confirm **User Sign On to App** event appears:
+   `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 23
+# Image 24
+
+---
+
+## 2) Configure Authenticators and Password Policy
+
+
+
+
+
+
+
+
+
+
 
 
 
