@@ -206,6 +206,79 @@
 1. Log in to **Okta** as **Jordan.Ellis** in an **Incgonito** browser
 2. Click **Jordan's Name** in the top right of the screen then **Account Settings**
 3. Under **Security Methods** find **Password** then **Reset**
+4. Confirm less password requirements appear
+
+# Image 36
+
+5. Sign out of Jordan's account
+
+### Verify in System Log
+
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. Use the following search prompt then confirm **Password Policy Creation** event appears:
+   `eventType eq "policy.lifecycle.create"`
+
+# Image 37
+# Image 38
+
+3. Use the following search prompt then confirm **Add Policy Rule** event appears:
+   `eventType eq "policy.rule.add"`
+
+# Image 39
+# Image 40
+
+4. Use the following search prompt then confirm **Morgan's Password Change** event appears:
+   `eventType eq "user.account.update_password" and target.alternateId eq "morgan.reyes@kennon.tech"`
+
+# Image 41
+# Image 42
+
+5. Use the following search prompt then confirm **Morgan's Account Lock Out** event appears:
+   `eventType eq "user.account.lock" and target.alternateId eq "morgan.reyes@kennon.tech"`
+
+# Image 43
+# Image 44
+
+6. Use the following search prompt then confirm **Morgan's Account Unlock** event appears:
+   `eventType eq "user.account.unlock_by_admin" and target.alternateId eq "morgan.reyes@kennon.tech"`
+
+# Image 45
+# Image 46
+
+### Reset Okta Verify for Both Users
+
+1. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
+2. Select **Morgan Reyes** open the **More Actions** dropdown then select **Reset Authenticators**
+
+# Image 47
+
+3. Select **Okta Verify** then **Reset Selected Authenticators**
+4. Repeat with **Jordan Ellis**
+
+---
+
+## 3) Authenticator Enrollment Policies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
