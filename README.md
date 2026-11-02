@@ -423,7 +423,7 @@
 1. In the **Okta Administrator Console** open the **Security** dropdown and then **Authentication Policies** 
 2. Select **App Sign-In** then open **Okta Dashboard**
 3. Find the **Standard Dashboard Rule** then open the **Actions** dropdown then **Edit**
-4. Change **User Must Authenticate with:** Any 1 factor type then **Save**
+4. Change **User Must Authenticate with:** Password then **Save**
 
 # Image 69
 
@@ -487,6 +487,36 @@
 3. Confirm that the **Inside Kennon HQ Rule** is priority 1 and **Outside Zone Rule** is priority 2
 
 # Image 77
+
+### Test Inside the Zone
+
+1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+2. Confirm that **Password** is the only verification type that it asks for then **Sign Out**
+
+# Image 78
+
+### Test Outside the Zone
+
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Networks**
+2. Find **Kennon Blocked IPs** then open the **Active** dropdown then select **Inactive** then **Delete**
+
+# Image 79
+
+3. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
