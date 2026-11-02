@@ -416,20 +416,77 @@
 
 ---
 
+## 5) Global Session Policy
 
+### Lower the Standard Dashboard Rule to One Factor
 
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Authentication Policies** 
+2. Select **App Sign-In** then open **Okta Dashboard**
+3. Find the **Standard Dashboard Rule** then open the **Actions** dropdown then **Edit**
+4. Change **User Must Authenticate with:** Any 1 factor type then **Save**
 
+# Image 69
 
+### Create Session Policy
 
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Global Session Policy** 
+2. Press **Add Policy** then create a policy with the following information the **Create Policy and Add Rule:**
 
+   - **Policy Name:** Kennon Test Session Policy
+   - **Policy Description:** Zone based MFA and session lengths for test users
+   - **Assign to Groups:** AuthPolicy Standard and AuthPolicy HighSecurity
 
+# Image 70
 
+3. For the rule enter the following information then **Create Rule:**
 
+   - **General Information**
+   - **Rule Name:** Inside Kennon HQ Rule
+  
+# Image 71
 
+   - **Policy Settings**
+   - **If User's IP is:** In zone Kennon HQ
+   - **Then Access is:** Allowed
+   - **Establish the User Session with:** Any factor used to meet the Authentication Policy requirements
+   - **Multifactor Authentication (MFA) is:** Not Required
 
+# Image 72
 
+   - **Okta Global Session Management**
+   - **Maximum Okta Global Session Lifetime:** 12 hours
+   - **Maximum Okta Global Session Idle Time:** 2 hours
 
+# Image 73
 
+### Add the Outside Zone Rule
+
+1. On the **Kennon Test Session Policy** press **Add Rule**
+2. Enter the following information then **Create Rule:**
+
+   - **General Information**
+   - **Rule Name:** Outside Zone Rule
+  
+# Image 74
+
+   - **Policy Settings**
+   - **If User's IP is:** Not in zone Kennon HQ
+   - **Then Access is:** Allowed
+   - **Establish the User Session with:** A password
+   - **Multifactor Authentication (MFA) is:** Required
+   - **Users will be Prompted for MFA:** At every sign in
+  
+# Image 75
+
+   - **Okta Global Session Management**
+   - **Maximum Okta Global Session Lifetime:** 2 hours
+   - **Maximum Okta Global Session Idle Time:** 30 minutes
+
+# Image 76
+
+3. Confirm that the **Inside Kennon HQ Rule** is priority 1 and **Outside Zone Rule** is priority 2
+
+# Image 77
 
 
 
