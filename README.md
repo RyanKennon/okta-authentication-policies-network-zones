@@ -503,9 +503,11 @@
 # Image 79
 
 3. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
+# Image 80
 
-
+### Another Test
 
 
 
