@@ -509,6 +509,39 @@
 
 ### Another Test
 
+1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
+2. Confirm that both **Password** and **Okta Verify** are required when logging in then **Sign Out**
+
+# Image 81
+
+### Verify In System Logs
+
+1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
+2. In the **Search** bar enter the following command:
+   `eventType eq "policy.lifecycle.create"`
+
+# Image 82
+# Image 83
+
+3. In the **Search** bar enter the following command:
+   `eventType eq "policy.rule.add"`
+
+# Image 84
+# Image 85
+
+4. In the **Search** bar enter the following command:
+   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 86
+# Image 87
+
+---
+
+## 6) App Level Authentication Policies
+
+
+
+
 
 
 
