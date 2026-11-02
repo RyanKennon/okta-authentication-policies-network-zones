@@ -362,6 +362,61 @@
 
 ## 4) Network Zones
 
+### Create IP Zone
+
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Networks**
+2. Open the **Add Zone** dropdown then **IP Zone**
+3. Create a zone with the following information then **Save:**
+
+   - **Zone Name:** Kennon HQ
+   - **Gateway IPs:** Your Current IP Address
+
+# Image 61
+
+### Confirm the Zone Detects Sign Ins
+
+1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then **Sign Out**
+2. On your phone turn off wifi so your on cellular date then log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then sign out
+3. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
+4. In the **Search** bar enter the following command:
+   `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+
+# Image 62
+
+5. Expand the computer sign in and open **Client**. The IP address matches your public IP inside Kennon HQ
+
+# Image 63
+
+6. Expand the phone sign in and open **Client**. The IP address is a different cellular IP outside Kennon HQ
+
+# Image 64
+
+### Create a Blocklist Zone
+
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Networks**
+2. Open the **Add Zone** dropdown then **IP Zone**
+3. Create a zone with the following information then **Save:**
+
+   - **Zone Name:** Kennon Blocked IPs
+   - **Gateway IPs:** Enter your phone's IP address
+   - **Block Access from IPs Matching Conditions Listed in this Zone:** Check
+
+# Image 65
+
+4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+
+# Image 66 on phone
+
+5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
+6. In the **Search** bar enter the following command:
+   `eventType eq "security.request.blocked"`
+
+# Image 67
+# Image 68
+
+---
+
+
 
 
 
