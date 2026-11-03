@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Images/Header.png" alt="Header">
+</p>
+
 # okta-authentication-policies-network-zones
 
 ## 1) Prepare Test Users and Groups
@@ -9,14 +13,18 @@
    - **Name:** AuthPolicy Standard
    - **Description:** Test users for standard authentication policies
   
-# Image 1
+<p align="center">
+  <img src="Images/Image%201.PNG" alt="Image 1">
+</p>
 
 3. Create a second group with the following information:
    - **Name:** AuthPolicy HighSecurity
    - **Description:** Test users for strict authentication policies
   
-# Image 2
-# Image 3
+<p align="center">
+  <img src="Images/Image%202.PNG" alt="Image 2">
+  <img src="Images/Image%203.PNG" alt="Image 3">
+</p>
 
 ### Create Test Users
 
@@ -32,7 +40,9 @@
    - **Password:** create password
    - **User Must Change Password on First Login:** Uncheck
   
-# Image 4 Hide email
+<p align="center">
+  <img src="Images/Image%204.PNG" alt="Image 4">
+</p>
 
 3. Create a second user with the following information:
    - **User Type:** User
@@ -45,8 +55,10 @@
    - **Password:** create password
    - **User Must Change Password on First Login:** Uncheck
   
-# Image 5 hide email
-# Image 6
+<p align="center">
+  <img src="Images/Image%205.PNG" alt="Image 5">
+  <img src="Images/Image%206.PNG" alt="Image 6">
+</p>
 
 ### Create Test App
 
@@ -56,30 +68,40 @@
    - **Application Label:** Kennon Intranet
    - **URL:** https://example.com
 
-# Image 7
+<p align="center">
+  <img src="Images/Image%207.PNG" alt="Image 7">
+</p>
 
 4. Open the **Sign On** tab next to **User Authentication** select **Edit**
 5. For the **Authentication Policy** select **Any Two Factors** then **Save**
 
-# Image 8
+<p align="center">
+  <img src="Images/Image%208.PNG" alt="Image 8">
+</p>
 
 6. Open the **Assignments** tab then click the **Assign** dropdown then **Assign to Groups**
 7. Select **Assign for both **AuthPolicy Standard** and **AuthPolicy HighSecurity** then **Done**
 
-# Image 9
-# Image 10
+<p align="center">
+  <img src="Images/Image%209.PNG" alt="Image 9">
+  <img src="Images/Image%2010.PNG" alt="Image 10">
+</p>
 
 ### Confirm Sign In
 
 1. Attempt to log into **Okta** as **Jordan Ellis** in an **Incgonito** browser
 2. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
-# Image 11
+<p align="center">
+  <img src="Images/Image%2011.PNG" alt="Image 11">
+</p>
 
 3. Attempt to log into **Okta** as **Moragn Reyes**
 4. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
-# Image 12
+<p align="center">
+  <img src="Images/Image%2012.PNG" alt="Image 12">
+</p>
 
 ### Verify in the System Log
 
@@ -87,38 +109,50 @@
 2. Use the following search prompt then confirm **Create Users** event appears:
    `eventType eq "user.lifecycle.create" and target.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 13
-# Image 14
+<p align="center">
+  <img src="Images/Image%2013.PNG" alt="Image 13">
+  <img src="Images/Image%2014.PNG" alt="Image 14">
+</p>
 
 3. Use the following search prompt then confirm **Add to Group** event appears:
    `eventType eq "group.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 15
-# Image 16
+<p align="center">
+  <img src="Images/Image%2015.PNG" alt="Image 15">
+  <img src="Images/Image%2016.PNG" alt="Image 16">
+</p>
 
 4. Use the following search prompt then confirm **Add to Application** event appears:
    `eventType eq "application.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 17
-# Image 18
+<p align="center">
+  <img src="Images/Image%2017.PNG" alt="Image 17">
+  <img src="Images/Image%2018.PNG" alt="Image 18">
+</p>
 
 5. Use the following search prompt then confirm **Login Success** event appears:
    `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 19
-# Image 20
+<p align="center">
+  <img src="Images/Image%2019.PNG" alt="Image 19">
+  <img src="Images/Image%2020.PNG" alt="Image 20">
+</p>
 
 6. Use the following search prompt then confirm **Evaluation of Sign On Policy** event appears:
    `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 21
-# Image 22
+<p align="center">
+  <img src="Images/Image%2021.PNG" alt="Image 21">
+  <img src="Images/Image%2022.PNG" alt="Image 22">
+</p>
 
 7. Use the following search prompt then confirm **User Sign On to App** event appears:
    `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 23
-# Image 24
+<p align="center">
+  <img src="Images/Image%2023.PNG" alt="Image 23">
+  <img src="Images/Image%2024.PNG" alt="Image 24">
+</p>
 
 ---
 
@@ -130,11 +164,15 @@
 2. To the right of **Okta Verify** open the **Actions** dropdown then **Edit**
 3. Under **Verification Options** make sure **TOTP** and **Push Notifications** are checked and **Okta FastPass** is unchecked
 
-# Image 25
+<p align="center">
+  <img src="Images/Image%2025.PNG" alt="Image 25">
+</p>
 
 4. Under **Push Notification: Number Challenge** make sure **All Push Challenges** is selected then **Save**
 
-# Image 26
+<p align="center">
+  <img src="Images/Image%2026.PNG" alt="Image 26">
+</p>
 
 ### Create HighSecurity Password Policy
 
@@ -147,8 +185,10 @@
       - **Policy Description:** Stricter password requirements for high security users
       - **Add Group:** AuthPolicy HighSecurity
       - **Authentication Providers:** Okta
-    
-# Image 27
+   
+<p align="center">
+  <img src="Images/Image%2027.PNG" alt="Image 27">
+</p>
 
    - **Password Requirements**
       - **Minimum Length:** 14
@@ -156,34 +196,46 @@
       - **Restrict Use of Common Passwords:** checked
       - **Does not Contain Part of Username / First Name / Last Name:** Checked
     
-# Image 28
+<p align="center">
+  <img src="Images/Image%2028.PNG" alt="Image 28">
+</p>
 
    - **Password Security**
       - **Enforce Password History for Last:** 5 passwords
       - **Minimum Password Age:** Uncheck
       - **Password Expires After:** 90 days
 
-# Image 29
+<p align="center">
+  <img src="Images/Image%2029.PNG" alt="Image 29">
+</p>
 
    - **Rule Settings:** HighSecurity Password Rule
 
-# Image 30
+<p align="center">
+  <img src="Images/Image%2030.PNG" alt="Image 30">
+</p>
 
 ### Test HighSecurity Password Policy
 
 1. Log in to **Okta** as **Morgan.Reyes** in an **Incgonito** browser
 2. When asked choose **Get a Push Notification** to confirm its active then finish logging in
 
-# Image 31
+<p align="center">
+  <img src="Images/Image%2031.PNG" alt="Image 31">
+</p>
 
 3. Click **Morgan's Name** in the top right of the screen then **Account Settings**
 4. Under **Security Methods** find **Password** then **Reset**
 
-# Image 32
+<p align="center">
+  <img src="Images/Image%2032.PNG" alt="Image 32">
+</p>
 
 5. Enter `Password1` as the password and confirm that it has been rejected
 
-# Image 33
+<p align="center">
+  <img src="Images/Image%2033.PNG" alt="Image 33">
+</p>
 
 6. Create a password that meets all requirements then reset password and sign out
 
@@ -193,11 +245,15 @@
 2. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
 3. Open **Morgan Reyes** profile then confirm that **Morgan Reyes** has the **Locked Out** status
 
-# Image 34
+<p align="center">
+  <img src="Images/Image%2034.PNG" alt="Image 34">
+</p>
 
 4. Press **Unlock Account** and confirm that **Morgan Reyes** has the **Active** status
 
-# Image 35
+<p align="center">
+  <img src="Images/Image%2035.PNG" alt="Image 35">
+</p>
 
 5. Back in the **Incognito** browser confirm successfully log into **Okta** as **Morgan Reyes** using a password then sign out
 
@@ -208,7 +264,9 @@
 3. Under **Security Methods** find **Password** then **Reset**
 4. Confirm less password requirements appear
 
-# Image 36
+<p align="center">
+  <img src="Images/Image%2036.PNG" alt="Image 36">
+</p>
 
 5. Sign out of Jordan's account
 
@@ -218,39 +276,51 @@
 2. Use the following search prompt then confirm **Password Policy Creation** event appears:
    `eventType eq "policy.lifecycle.create"`
 
-# Image 37
-# Image 38
+<p align="center">
+  <img src="Images/Image%2037.PNG" alt="Image 37">
+  <img src="Images/Image%2038.PNG" alt="Image 38">
+</p>
 
 3. Use the following search prompt then confirm **Add Policy Rule** event appears:
    `eventType eq "policy.rule.add"`
 
-# Image 39
-# Image 40
+<p align="center">
+  <img src="Images/Image%2039.PNG" alt="Image 39">
+  <img src="Images/Image%2040.PNG" alt="Image 40">
+</p>
 
 4. Use the following search prompt then confirm **Morgan's Password Change** event appears:
    `eventType eq "user.account.update_password" and target.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 41
-# Image 42
+<p align="center">
+  <img src="Images/Image%2041.PNG" alt="Image 41">
+  <img src="Images/Image%2042.PNG" alt="Image 42">
+</p>
 
 5. Use the following search prompt then confirm **Morgan's Account Lock Out** event appears:
    `eventType eq "user.account.lock" and target.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 43
-# Image 44
+<p align="center">
+  <img src="Images/Image%2043.PNG" alt="Image 43">
+  <img src="Images/Image%2044.PNG" alt="Image 44">
+</p>
 
 6. Use the following search prompt then confirm **Morgan's Account Unlock** event appears:
    `eventType eq "user.account.unlock_by_admin" and target.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 45
-# Image 46
+<p align="center">
+  <img src="Images/Image%2045.PNG" alt="Image 45">
+  <img src="Images/Image%2046.PNG" alt="Image 46">
+</p>
 
 ### Reset Okta Verify for Both Users
 
 1. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
 2. Select **Morgan Reyes** open the **More Actions** dropdown then select **Reset Authenticators**
 
-# Image 47
+<p align="center">
+  <img src="Images/Image%2047.PNG" alt="Image 47">
+</p>
 
 3. Select **Okta Verify** then **Reset Selected Authenticators**
 4. Repeat with **Jordan Ellis**
@@ -272,7 +342,9 @@
    - **Okta Verify Enrollment:** Optional
    - **Password Enrollment:** Required
 
-# Image 49
+<p align="center">
+  <img src="Images/Image%2049.PNG" alt="Image 49">
+</p>
 
 4. On the **Add Rule** Page enter the following information then **Create Rule:**
 
@@ -281,7 +353,9 @@
    - **And User is Accessing:** Okta or Any App
    - **Then Enroll in Authenticators:** Allowed for All Authenticators
 
-# Image 50
+<p align="center">
+  <img src="Images/Image%2050.PNG" alt="Image 50">
+</p>
 
 ### Create HighSecurity Enrollment Policy
 
@@ -294,7 +368,9 @@
    - **Okta Verify Enrollment:** Required
    - **Password Enrollment:** Required
 
-# Image 51
+<p align="center">
+  <img src="Images/Image%2051.PNG" alt="Image 51">
+</p>
 
 2. On the **Add Rule** Page enter the following information then **Create Rule:**
 
@@ -303,7 +379,9 @@
    - **And User is Accessing:** Okta or Any App
    - **Then Enroll in Authenticators:** Allowed for All Authenticators
 
-# Image 52
+<p align="center">
+  <img src="Images/Image%2052.PNG" alt="Image 52">
+</p>
 
 ### Add a Standard Rule to the Okta Dashboard Policy
 
@@ -316,26 +394,34 @@
    - **User must authenticate with:** Any 2 factor types
    - **Authentication methods:** Allow any method that can be used to meet the requirement
 
-# Image 52.1
+<p align="center">
+  <img src="Images/Image%2052.1.PNG" alt="Image 52.1">
+</p>
 
 3. Click **Save**
 4. Confirm **Standard Dashboard Rule** sits at priority 1 above the **Catch-all Rule**
 
-# Image 52.2
+<p align="center">
+  <img src="Images/Image%2052.2.PNG" alt="Image 52.2">
+</p>
 
 ### Test Standard Policy
 
 1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 2. Confirm log in success only using a password and email verification
 
-# Image 53
+<p align="center">
+  <img src="Images/Image%2053.PNG" alt="Image 53">
+</p>
 
 ### Test HighSecurity Policy
 
 1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
 2. Confirm that setting up Okta Verify is required to log in
 
-# Image 54
+<p align="center">
+  <img src="Images/Image%2054.PNG" alt="Image 54">
+</p>
 
 ### Verify in System Logs
 
@@ -343,20 +429,26 @@
 2. Use the following search prompt then confirm **Create Policy** events appear:
    `eventType eq "policy.lifecycle.create"`
 
-# Image 55
-# Image 56
+<p align="center">
+  <img src="Images/Image%2055.PNG" alt="Image 55">
+  <img src="Images/Image%2056.PNG" alt="Image 56">
+</p>
 
 3. Use the following search prompt then confirm **Add Policy Rule** event appears:
    `eventType eq "policy.rule.add"`
 
-# Image 57
-# Image 58
+<p align="center">
+  <img src="Images/Image%2057.PNG" alt="Image 57">
+  <img src="Images/Image%2058.PNG" alt="Image 58">
+</p>
 
 4. Use the following search prompt then confirm **Activate Factor** event appears:
    `eventType eq "user.mfa.factor.activate" and actor.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 59
-# Image 60
+<p align="center">
+  <img src="Images/Image%2059.PNG" alt="Image 59">
+  <img src="Images/Image%2060.PNG" alt="Image 60">
+</p>
 
 ---
 
@@ -371,7 +463,9 @@
    - **Zone Name:** Kennon HQ
    - **Gateway IPs:** Your Current IP Address
 
-# Image 61
+<p align="center">
+  <img src="Images/Image%2061.PNG" alt="Image 61">
+</p>
 
 ### Confirm the Zone Detects Sign Ins
 
@@ -381,15 +475,21 @@
 4. In the **Search** bar enter the following command:
    `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 62
+<p align="center">
+  <img src="Images/Image%2062.PNG" alt="Image 62">
+</p>
 
 5. Expand the computer sign in and open **Client**. The IP address matches your public IP inside Kennon HQ
 
-# Image 63
+<p align="center">
+  <img src="Images/Image%2063.PNG" alt="Image 63">
+</p>
 
 6. Expand the phone sign in and open **Client**. The IP address is a different cellular IP outside Kennon HQ
 
-# Image 64
+<p align="center">
+  <img src="Images/Image%2064.PNG" alt="Image 64">
+</p>
 
 ### Create a Blocklist Zone
 
@@ -401,18 +501,24 @@
    - **Gateway IPs:** Enter your phone's IP address
    - **Block Access from IPs Matching Conditions Listed in this Zone:** Check
 
-# Image 65
+<p align="center">
+  <img src="Images/Image%2065.PNG" alt="Image 65">
+</p>
 
 4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 
-# Image 66 on phone
+<p align="center">
+  <img src="Images/Image%2066.PNG" alt="Image 66">
+</p>
 
 5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
 6. In the **Search** bar enter the following command:
    `eventType eq "security.request.blocked"`
 
-# Image 67
-# Image 68
+<p align="center">
+  <img src="Images/Image%2067.PNG" alt="Image 67">
+  <img src="Images/Image%2068.PNG" alt="Image 68">
+</p>
 
 ---
 
@@ -425,7 +531,9 @@
 3. Find the **Standard Dashboard Rule** then open the **Actions** dropdown then **Edit**
 4. Change **User Must Authenticate with:** Password then **Save**
 
-# Image 69
+<p align="center">
+  <img src="Images/Image%2069.PNG" alt="Image 69">
+</p>
 
 ### Create Session Policy
 
@@ -436,14 +544,18 @@
    - **Policy Description:** Zone based MFA and session lengths for test users
    - **Assign to Groups:** AuthPolicy Standard and AuthPolicy HighSecurity
 
-# Image 70
+<p align="center">
+  <img src="Images/Image%2070.PNG" alt="Image 70">
+</p>
 
 3. For the rule enter the following information then **Create Rule:**
 
    - **General Information**
    - **Rule Name:** Inside Kennon HQ Rule
   
-# Image 71
+<p align="center">
+  <img src="Images/Image%2071.PNG" alt="Image 71">
+</p>
 
    - **Policy Settings**
    - **If User's IP is:** In zone Kennon HQ
@@ -451,13 +563,17 @@
    - **Establish the User Session with:** Any factor used to meet the Authentication Policy requirements
    - **Multifactor Authentication (MFA) is:** Not Required
 
-# Image 72
+<p align="center">
+  <img src="Images/Image%2072.PNG" alt="Image 72">
+</p>
 
    - **Okta Global Session Management**
    - **Maximum Okta Global Session Lifetime:** 12 hours
    - **Maximum Okta Global Session Idle Time:** 2 hours
 
-# Image 73
+<p align="center">
+  <img src="Images/Image%2073.PNG" alt="Image 73">
+</p>
 
 ### Add the Outside Zone Rule
 
@@ -467,7 +583,9 @@
    - **General Information**
    - **Rule Name:** Outside Zone Rule
   
-# Image 74
+<p align="center">
+  <img src="Images/Image%2074.PNG" alt="Image 74">
+</p>
 
    - **Policy Settings**
    - **If User's IP is:** Not in zone Kennon HQ
@@ -476,43 +594,57 @@
    - **Multifactor Authentication (MFA) is:** Required
    - **Users will be Prompted for MFA:** At every sign in
   
-# Image 75
+<p align="center">
+  <img src="Images/Image%2075.PNG" alt="Image 75">
+</p>
 
    - **Okta Global Session Management**
    - **Maximum Okta Global Session Lifetime:** 2 hours
    - **Maximum Okta Global Session Idle Time:** 30 minutes
 
-# Image 76
+<p align="center">
+  <img src="Images/Image%2076.PNG" alt="Image 76">
+</p>
 
 3. Confirm that the **Inside Kennon HQ Rule** is priority 1 and **Outside Zone Rule** is priority 2
 
-# Image 77
+<p align="center">
+  <img src="Images/Image%2077.PNG" alt="Image 77">
+</p>
 
 ### Test Inside the Zone
 
 1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 2. Confirm that **Password** is the only verification type that it asks for then **Sign Out**
 
-# Image 78
+<p align="center">
+  <img src="Images/Image%2078.PNG" alt="Image 78">
+</p>
 
 ### Test Outside the Zone
 
 1. In the **Okta Administrator Console** open the **Security** dropdown and then **Networks**
 2. Find **Kennon Blocked IPs** then open the **Active** dropdown then select **Inactive** then **Delete**
 
-# Image 79
+<p align="center">
+  <img src="Images/Image%2079.PNG" alt="Image 79">
+</p>
 
 3. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
-# Image 80
+<p align="center">
+  <img src="Images/Image%2080.PNG" alt="Image 80">
+</p>
 
 ### Another Test
 
 1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
 2. Confirm that both **Password** and **Okta Verify** are required when logging in then **Sign Out**
 
-# Image 81
+<p align="center">
+  <img src="Images/Image%2081.PNG" alt="Image 81">
+</p>
 
 ### Verify In System Logs
 
@@ -520,20 +652,26 @@
 2. In the **Search** bar enter the following command:
    `eventType eq "policy.lifecycle.create"`
 
-# Image 82
-# Image 83
+<p align="center">
+  <img src="Images/Image%2082.PNG" alt="Image 82">
+  <img src="Images/Image%2083.PNG" alt="Image 83">
+</p>
 
 3. In the **Search** bar enter the following command:
    `eventType eq "policy.rule.add"`
 
-# Image 84
-# Image 85
+<p align="center">
+  <img src="Images/Image%2084.PNG" alt="Image 84">
+  <img src="Images/Image%2085.PNG" alt="Image 85">
+</p>
 
 4. In the **Search** bar enter the following command:
    `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
 
-# Image 86
-# Image 87
+<p align="center">
+  <img src="Images/Image%2086.PNG" alt="Image 86">
+  <img src="Images/Image%2087.PNG" alt="Image 87">
+</p>
 
 ---
 
@@ -548,7 +686,9 @@
    - **Name:** Kennon Intranet Policy
    - **Description:** Zone and group based access for Kennon Intranet
 
-# Image 88
+<p align="center">
+  <img src="Images/Image%2088.PNG" alt="Image 88">
+</p>
 
 ### Add HighSecurity Intranet Rule
 
@@ -558,24 +698,32 @@
    - **General Information**
    - **Rule Name:** HighSecurity Intranet Rule
   
-# Image 89
+<p align="center">
+  <img src="Images/Image%2089.PNG" alt="Image 89">
+</p>
 
    - **IF**
    - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy HighSecurity
 
-# Image 90
+<p align="center">
+  <img src="Images/Image%2090.PNG" alt="Image 90">
+</p>
 
    - **Then**
    - **Then Access is:** Allowed after successful authenticaion
    - **User Must Authenticate with:** Any 2 factor types
    - **Authentication Methods:** Disallow specific authentication Email
 
-# Image 91
+<p align="center">
+  <img src="Images/Image%2091.PNG" alt="Image 91">
+</p>
 
    - **When to Prompt for Authentication**
    - **Re-Authentication Frequency is:** Every sign in attempt
 
-# Image 92
+<p align="center">
+  <img src="Images/Image%2092.PNG" alt="Image 92">
+</p>
 
 ### Add Standard Outside HQ Rule
 
@@ -585,20 +733,26 @@
    - **General Information**
    - **Rule Name:** Standard Outside HQ Rule
   
-# Image 93
+<p align="center">
+  <img src="Images/Image%2093.PNG" alt="Image 93">
+</p>
 
    - **IF**
    - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy Standard
    - **And User's IP is:** Not in any of the following zones Kennon HQ
 
-# Image 94
+<p align="center">
+  <img src="Images/Image%2094.PNG" alt="Image 94">
+</p>
 
    - **Then**
    - **Then Access is:** Allowed after successful authenticaion
    - **User Must Authenticate with:** Any 2 factor types
    - **Authentication Methods:** Allow any method that can be used to meet the requirement
 
-# Image 95
+<p align="center">
+  <img src="Images/Image%2095.PNG" alt="Image 95">
+</p>
 
 ### Add Standard Inside HQ Rule
 
@@ -608,37 +762,49 @@
    - **General Information**
    - **Rule Name:** Standard Inside HQ Rule
   
-# Image 96
+<p align="center">
+  <img src="Images/Image%2096.PNG" alt="Image 96">
+</p>
 
    - **IF**
    - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy Standard
    - **And User's IP is:** In zone Kennon HQ
 
-# Image 97
+<p align="center">
+  <img src="Images/Image%2097.PNG" alt="Image 97">
+</p>
 
    - **Then Access is:** Allowed after successful authentication
    - **User Must Authenticate with:** Password
 
-# Image 98
+<p align="center">
+  <img src="Images/Image%2098.PNG" alt="Image 98">
+</p>
 
 3. Confirm that **HighSecurity Intranet Rule** is priority 1, **Standard Inside HQ Rule** is priority 2, **Standard Outsude HQ Rule** is priority 3, and the **Catch-All Rule** is priority 4
 
-# Image 99
-# Image 100
-# Image 101
+<p align="center">
+  <img src="Images/Image%2099.PNG" alt="Image 99">
+  <img src="Images/Image%20100.PNG" alt="Image 100">
+  <img src="Images/Image%20101.PNG" alt="Image 101">
+</p>
 
 ### Assign Policy to Kennon Intranet
 
 1. In the **Kennon Intranet Policy** open the **Apps** tab then **Add App**
 2. Find **Kennon Intranet** then press *Add** then **Done**
 
-# Image 102
+<p align="center">
+  <img src="Images/Image%20102.PNG" alt="Image 102">
+</p>
 
 3. Open the **Applications and Resources** dropdown the **Applications**
 4. Select **Kennon Intranet** then open the **Sign On** tab
 5. Confirm **User Authentication** shows **Kennon Intranet Policy**
 
-# Image 103
+<p align="center">
+  <img src="Images/Image%20103.PNG" alt="Image 103">
+</p>
 
 ### Test Morgan Reyes
 
@@ -646,12 +812,16 @@
 2. On **Morgan's Dashboard** select **Kennon Intranet**
 3. Confirm **Okta Verify** is prompted before being taken to example.com
 
-# Image 104
+<p align="center">
+  <img src="Images/Image%20104.PNG" alt="Image 104">
+</p>
 
 4. Close the **exmaple.com** tab then on **Morgan's Dashboard** open **Kennon Intranet** again
 5. Confirm **Okta Verify** is prompted again
 
-# Image 105
+<p align="center">
+  <img src="Images/Image%20105.PNG" alt="Image 105">
+</p>
 
 6. **Sign Out** of Morgan Reyes's account
 
@@ -665,7 +835,9 @@
 6. On **Jordan's Dashboard** open **Kennon Intranet**
 7. Confirm it opens without any additional verification necessary
 
-# Image 106
+<p align="center">
+  <img src="Images/Image%20106.PNG" alt="Image 106">
+</p>
 
 ### Verify in System Log
 
@@ -673,38 +845,50 @@
 2. In the **Search** bar enter the following command:
    `eventType eq "policy.lifecycle.create" and target.displayName eq "Kennon Intranet Policy"`
 
-# Image 107
-# Image 108 hide ip address
+<p align="center">
+  <img src="Images/Image%20107.PNG" alt="Image 107">
+  <img src="Images/Image%20108.PNG" alt="Image 108">
+</p>
 
 3. In the **Search** bar enter the following command:
    `eventType eq "policy.rule.add"`
 
-# Image 109
-# Image 110
+<p align="center">
+  <img src="Images/Image%20109.PNG" alt="Image 109">
+  <img src="Images/Image%20110.PNG" alt="Image 110">
+</p>
 
 4. In the **Search** bar enter the following command:
    `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 111
-# Image 112
+<p align="center">
+  <img src="Images/Image%20111.PNG" alt="Image 111">
+  <img src="Images/Image%20112.PNG" alt="Image 112">
+</p>
 
 5. In the **Search** bar enter the following command:
    `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech" and outcome.result eq "ALLOW"`
 
-# Image 113
-# Image 114
+<p align="center">
+  <img src="Images/Image%20113.PNG" alt="Image 113">
+  <img src="Images/Image%20114.PNG" alt="Image 114">
+</p>
 
 6. In the **Search** bar enter the following command:
    `eventType eq "user.authentication.sso" and actor.alternateId eq "morgan.reyes@kennon.tech"`
 
-# Image 115
-# Image 116
+<p align="center">
+  <img src="Images/Image%20115.PNG" alt="Image 115">
+  <img src="Images/Image%20116.PNG" alt="Image 116">
+</p>
 
 7. In the **Search** bar enter the following command:
    `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech" and target.displayName eq "Bookmark App"`
 
-# Image 117
-# Image 118
+<p align="center">
+  <img src="Images/Image%20117.PNG" alt="Image 117">
+  <img src="Images/Image%20118.PNG" alt="Image 118">
+</p>
 
 ---
 
@@ -734,12 +918,16 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 3. Under **User Authentication** press **Edit**
 4. Switch the policy to **Any Two Factors** then **Save**
 
-# Image 119
+<p align="center">
+  <img src="Images/Image%20119.PNG" alt="Image 119">
+</p>
 
 5. Open the **Security** dropdown and then **Authentication Policies**
 6. Press the **Three Dots** to the right of **Kennon Intranet Policy** then **Delete**
 
-# Image 120
+<p align="center">
+  <img src="Images/Image%20120.PNG" alt="Image 120">
+</p>
 
 ### Remove the Session Policy
 
@@ -747,7 +935,9 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Next to the **Kennon Test Session Policy** open the **Active** dopdown and select **Deactivate**
 3. Press **Delete**
 
-# Image 121
+<p align="center">
+  <img src="Images/Image%20121.PNG" alt="Image 121">
+</p>
 
 ### Remove the Kennon HQ Zone
 
@@ -755,7 +945,9 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Next to **Kennon HQ** open the **Active** dropdown then select **Inactive**
 3. Press the **X**
 
-# Image 122
+<p align="center">
+  <img src="Images/Image%20122.PNG" alt="Image 122">
+</p>
 
 ### Remove the Added Policy Rules
 
@@ -763,25 +955,33 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Find **Test Groups Enrollment Rule** then open the **Actions** dropdown then **Deactivate**
 3. Open the **Actions** dropdown again then **Delete**
 
-# Image 123
+<p align="center">
+  <img src="Images/Image%20123.PNG" alt="Image 123">
+</p>
 
 4. At the top of the page press **Back to All Authentication Policies** then press **App Sign-In**
 5. Open **Okta Dashboard** then find the **Standard Dashboard Rule**
 6. Open the **Actions** dropdown then **Deactivate**
 7. Open the **Actions** dropdown again then press **Delete**
 
-# Image 124
+<p align="center">
+  <img src="Images/Image%20124.PNG" alt="Image 124">
+</p>
 
 ### Remove Enrollment Policies
 
 1. Open the **Security** dropdown then **Authenticators** then open the **Enrollment** tab
 2. Find the **Standard Enrollment Policy** then open the **Actions** dropdown and press **Delete**
 
-# Image 125
+<p align="center">
+  <img src="Images/Image%20125.PNG" alt="Image 125">
+</p>
 
 3. Find the **HighSecurity Enrollment Policy** then open the **Actions** dropdown and press **Delete**
 
-# Image 126
+<p align="center">
+  <img src="Images/Image%20126.PNG" alt="Image 126">
+</p>
 
 ### Remove Password Policy
 
@@ -789,7 +989,9 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Find **Password** then open the **Actions** dropdown and select **Edit**
 3. Select **HighSecurity Password Policy** and press **Delete**
 
-# Image 127
+<p align="center">
+  <img src="Images/Image%20127.PNG" alt="Image 127">
+</p>
 
 ### Revert Okta Verify
 
@@ -797,7 +999,9 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Find **Okta Verify** then open the **Actions** dropdown and select **Edit**
 3. Set **Number Challenge for Okta Verify Push** to **Never** then **Save**
 
-# Image 128
+<p align="center">
+  <img src="Images/Image%20128.PNG" alt="Image 128">
+</p>
 
 ### Remove the Kennon Intranet App
 
@@ -805,7 +1009,9 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Open the **Active** dropdown then **Deactivate**
 3. Open the **Inactive** dropdown then **Delete**
 
-# Image 129
+<p align="center">
+  <img src="Images/Image%20129.PNG" alt="Image 129">
+</p>
 
 ### Remove Test Users
 
@@ -813,23 +1019,31 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. Open the **More Actions** dropdown then **Deactivate**
 3. Then press **Delete**
 
-# Image 130
+<p align="center">
+  <img src="Images/Image%20130.PNG" alt="Image 130">
+</p>
 
 4. Open **Jordan Ellis** profile then open the **More Actions** dropdown then **Deactivate**
 5. Then press **Delete**
 
-# Image 131
+<p align="center">
+  <img src="Images/Image%20131.PNG" alt="Image 131">
+</p>
 
 ### Remove Groups
 
 1. Open the **Directory** dropdown then **Groups** then open **AuthPolicy HighSecurity**
 2. Open the **Actions** dropdown then **Delete**
 
-# Image 132
+<p align="center">
+  <img src="Images/Image%20132.PNG" alt="Image 132">
+</p>
 
 3. Open the **AuthPolicy Standard** group then open the **Actions** dropdown then **Delete**
 
-# Image 133
+<p align="center">
+  <img src="Images/Image%20133.PNG" alt="Image 133">
+</p>
 
 ### Verify in the System Log
 
@@ -837,38 +1051,50 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 2. In the **Search** bar enter the following command:
    `eventType eq "policy.lifecycle.delete"`
 
-# Image 134
-# Image 135
+<p align="center">
+  <img src="Images/Image%20134.PNG" alt="Image 134">
+  <img src="Images/Image%20135.PNG" alt="Image 135">
+</p>
 
 3. In the **Search** bar enter the following command:
    `eventType eq "policy.rule.delete"`
 
-# Image 136
-# Image 137
+<p align="center">
+  <img src="Images/Image%20136.PNG" alt="Image 136">
+  <img src="Images/Image%20137.PNG" alt="Image 137">
+</p>
 
 4. In the **Search** bar enter the following command:
    `eventType eq "zone.delete"`
 
-# Image 138
-# Image 139
+<p align="center">
+  <img src="Images/Image%20138.PNG" alt="Image 138">
+  <img src="Images/Image%20139.PNG" alt="Image 139">
+</p>
 
 5. In the **Search** bar enter the following command:
    `eventType eq "application.lifecycle.delete"`
 
-# Image 140
-# Image 141
+<p align="center">
+  <img src="Images/Image%20140.PNG" alt="Image 140">
+  <img src="Images/Image%20141.PNG" alt="Image 141">
+</p>
 
 6. In the **Search** bar enter the following command:
    `eventType eq "user.lifecycle.delete.completed"`
 
-# Image 142
-# Image 143
+<p align="center">
+  <img src="Images/Image%20142.PNG" alt="Image 142">
+  <img src="Images/Image%20143.PNG" alt="Image 143">
+</p>
 
 7. In the **Search** bar enter the following command:
    `eventType eq "group.lifecycle.delete"`
 
-# Image 144
-# Image 145
+<p align="center">
+  <img src="Images/Image%20144.PNG" alt="Image 144">
+  <img src="Images/Image%20145.PNG" alt="Image 145">
+</p>
 
 
 
