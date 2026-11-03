@@ -723,5 +723,30 @@ The table below combines every sign in tested in this lab, showing what each use
 
 Morgan required Okta Verify inside Kennon HQ even though the session rule required no MFA, showing that the stricter policy always wins.
 
+---
+
+## 8) Cleanup
+
+### Remove the Kennon Intranet Policy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
