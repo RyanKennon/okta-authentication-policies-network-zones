@@ -1,8 +1,66 @@
 <p align="center">
-  <img src="Images/Header.png" alt="Header">
+  <img src="Images/Header.png" alt="Okta Authentication Policies and Network Zones">
 </p>
 
-# okta-authentication-policies-network-zones
+# Okta Authentication Policies and Network Zones
+
+This lab builds a layered authentication setup for the fictional company Kennon Technologies. It covers authenticator settings, password and enrollment policies, a trusted network zone, a global session policy, and an app level authentication policy, then tests each layer by signing in as test users from inside and outside the trusted network.
+
+---
+
+## Skills Demonstrated
+
+- Configuring Okta Verify verification options and push number challenge
+- Creating group scoped password policies with complexity and lockout settings
+- Building authenticator enrollment policies with required and optional authenticators
+- Creating IP zones and blocklist zones
+- Configuring a global session policy with zone based MFA and session lifetimes
+- Creating app level authentication policies with group and zone conditions
+- Understanding policy evaluation order and how the stricter policy wins
+- Troubleshooting sign in behavior and verifying results in the System Log
+
+---
+
+## Prerequisites
+
+- An Okta Integrator Free Plan org (Identity Engine) with Super Administrator access
+- Okta Verify installed on a phone
+- A phone with cellular data for testing sign ins from outside the trusted zone
+- An email inbox you control for the test users' Email authenticator
+- A second browser session signed in as your admin account while editing policies
+
+---
+
+## Environment
+
+| Component | Details |
+|---|---|
+| Identity Platform | Okta Integrator Free Plan (Identity Engine) |
+| Company | Kennon Technologies (kennon.tech) |
+| Test Users | Jordan Ellis (Standard), Morgan Reyes (HighSecurity) |
+| Test Groups | AuthPolicy Standard, AuthPolicy HighSecurity |
+| Test App | Kennon Intranet (Bookmark App) |
+| MFA | Okta Verify (push and TOTP), Email |
+| Inside Zone Device | Computer on home network |
+| Outside Zone Device | Phone on cellular data |
+
+> **Note:** Real IP addresses are blurred in screenshots. Kennon Intranet appears as **Bookmark App** in the System Log.
+
+---
+
+## Table of Contents
+
+1. [Prepare Test Users and Groups](#1-prepare-test-users-and-groups)
+2. [Configure Authenticators and Password Policy](#2-configure-authenticators-and-password-policy)
+3. [Authenticator Enrollment Policies](#3-authenticator-enrollment-policies)
+4. [Network Zones](#4-network-zones)
+5. [Global Session Policy](#5-global-session-policy)
+6. [App Level Authentication Policies](#6-app-level-authentication-policies)
+7. [Test Matrix Summary](#7-test-matrix-summary)
+8. [Cleanup](#8-cleanup)
+9. [Closing Note](#closing-note)
+
+---
 
 ## 1) Prepare Test Users and Groups
 
@@ -105,49 +163,67 @@
 
 ### Verify in the System Log
 
-1. Open the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
-2. Use the following search prompt then confirm **Create Users** event appears:
-   `eventType eq "user.lifecycle.create" and target.alternateId eq "jordan.ellis@kennon.tech"`
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
+2. Search for user creation events filtered to Jordan Ellis to confirm the account was created:
+   ```text
+   eventType eq "user.lifecycle.create" and target.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **Create okta user** event appears with your admin account as the actor and **Jordan Ellis** as the target
 
 <p align="center">
   <img src="Images/Image%2013.PNG" alt="Image 13">
   <img src="Images/Image%2014.png" alt="Image 14">
 </p>
 
-3. Use the following search prompt then confirm **Add to Group** event appears:
-   `eventType eq "group.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
+3. Search for group membership changes filtered to Jordan Ellis to confirm the group assignment:
+   ```text
+   eventType eq "group.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **Add user to group membership** event appears with **AuthPolicy Standard** as a target
 
 <p align="center">
   <img src="Images/Image%2015.PNG" alt="Image 15">
   <img src="Images/Image%2016.png" alt="Image 16">
 </p>
 
-4. Use the following search prompt then confirm **Add to Application** event appears:
-   `eventType eq "application.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"`
+4. Search for app assignments filtered to Jordan Ellis to confirm Kennon Intranet was assigned through the group:
+   ```text
+   eventType eq "application.user_membership.add" and target.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **Add user to application membership** event appears with **Kennon Intranet** as a target
 
 <p align="center">
   <img src="Images/Image%2017.PNG" alt="Image 17">
   <img src="Images/Image%2018.png" alt="Image 18">
 </p>
 
-5. Use the following search prompt then confirm **Login Success** event appears:
-   `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+5. Search for sign in sessions started by Jordan Ellis to confirm the baseline sign in worked:
+   ```text
+   eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **User login to Okta** event appears with a **SUCCESS** outcome
 
 <p align="center">
   <img src="Images/Image%2019.PNG" alt="Image 19">
   <img src="Images/Image%2020.png" alt="Image 20">
 </p>
 
-6. Use the following search prompt then confirm **Evaluation of Sign On Policy** event appears:
-   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+6. Search for sign on policy evaluations for Jordan Ellis to see which policy Okta applied:
+   ```text
+   eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **Evaluation of sign on policy** event appears with the matched policy and rule listed under **Targets**
 
 <p align="center">
   <img src="Images/Image%2021.PNG" alt="Image 21">
   <img src="Images/Image%2022.png" alt="Image 22">
 </p>
 
-7. Use the following search prompt then confirm **User Sign On to App** event appears:
-   `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+7. Search for app sign ons by Jordan Ellis to confirm access to Kennon Intranet:
+   ```text
+   eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The **User single sign on to app** event appears with **Kennon Intranet** as the target
 
 <p align="center">
   <img src="Images/Image%2023.PNG" alt="Image 23">
@@ -273,40 +349,55 @@
 ### Verify in System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
-2. Use the following search prompt then confirm **Password Policy Creation** event appears:
-   `eventType eq "policy.lifecycle.create"`
+2. Search for policy creation events to confirm the password policy was created:
+   ```text
+   eventType eq "policy.lifecycle.create"
+   ```
+   The **Create policy** event appears with your admin account as the actor and **HighSecurity Password Policy** as the target
 
 <p align="center">
   <img src="Images/Image%2037.PNG" alt="Image 37">
   <img src="Images/Image%2038.png" alt="Image 38">
 </p>
 
-3. Use the following search prompt then confirm **Add Policy Rule** event appears:
-   `eventType eq "policy.rule.add"`
+3. Search for policy rule additions to confirm the password rule was created:
+   ```text
+   eventType eq "policy.rule.add"
+   ```
+   The **Add policy rule** event appears with **HighSecurity Password Policy** and **HighSecurity Password Rule** as targets
 
 <p align="center">
   <img src="Images/Image%2039.PNG" alt="Image 39">
   <img src="Images/Image%2040.png" alt="Image 40">
 </p>
 
-4. Use the following search prompt then confirm **Morgan's Password Change** event appears:
-   `eventType eq "user.account.update_password" and target.alternateId eq "morgan.reyes@kennon.tech"`
+4. Search for password updates filtered to Morgan Reyes to confirm the password change:
+   ```text
+   eventType eq "user.account.update_password" and target.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   The password update event appears with **Morgan Reyes** as both the actor and the target and a **SUCCESS** outcome
 
 <p align="center">
   <img src="Images/Image%2041.PNG" alt="Image 41">
   <img src="Images/Image%2042.png" alt="Image 42">
 </p>
 
-5. Use the following search prompt then confirm **Morgan's Account Lock Out** event appears:
-   `eventType eq "user.account.lock" and target.alternateId eq "morgan.reyes@kennon.tech"`
+5. Search for account lockouts filtered to Morgan Reyes to confirm the lockout policy worked:
+   ```text
+   eventType eq "user.account.lock" and target.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   The lockout event appears right after Morgan's third failed sign in attempt
 
 <p align="center">
   <img src="Images/Image%2043.PNG" alt="Image 43">
   <img src="Images/Image%2044.png" alt="Image 44">
 </p>
 
-6. Use the following search prompt then confirm **Morgan's Account Unlock** event appears:
-   `eventType eq "user.account.unlock_by_admin" and target.alternateId eq "morgan.reyes@kennon.tech"`
+6. Search for admin unlocks filtered to Morgan Reyes to confirm the account was unlocked:
+   ```text
+   eventType eq "user.account.unlock_by_admin" and target.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   The unlock event appears with your admin account as the actor and **Morgan Reyes** as the target
 
 <p align="center">
   <img src="Images/Image%2045.PNG" alt="Image 45">
@@ -426,24 +517,33 @@
 ### Verify in System Logs
 
 1. In the **Okta Administration Console** open the **Reports** dropdown then **System Log**
-2. Use the following search prompt then confirm **Create Policy** events appear:
-   `eventType eq "policy.lifecycle.create"`
+2. Search for policy creation events to confirm both enrollment policies were created:
+   ```text
+   eventType eq "policy.lifecycle.create"
+   ```
+   **Create policy** events appear for **Standard Enrollment Policy** and **HighSecurity Enrollment Policy** with your admin account as the actor
 
 <p align="center">
   <img src="Images/Image%2055.PNG" alt="Image 55">
   <img src="Images/Image%2056.png" alt="Image 56">
 </p>
 
-3. Use the following search prompt then confirm **Add Policy Rule** event appears:
-   `eventType eq "policy.rule.add"`
+3. Search for policy rule additions to confirm the enrollment and dashboard rules were created:
+   ```text
+   eventType eq "policy.rule.add"
+   ```
+   **Add policy rule** events appear for **Standard Employee Rule**, **HighSecurity Enrollment Rule**, **Standard Dashboard Rule** and **Test Groups Enrollment Rule**
 
 <p align="center">
   <img src="Images/Image%2057.PNG" alt="Image 57">
   <img src="Images/Image%2058.png" alt="Image 58">
 </p>
 
-4. Use the following search prompt then confirm **Activate Factor** event appears:
-   `eventType eq "user.mfa.factor.activate" and actor.alternateId eq "morgan.reyes@kennon.tech"`
+4. Search for authenticator activations filtered to Morgan Reyes to confirm Okta Verify enrollment:
+   ```text
+   eventType eq "user.mfa.factor.activate" and actor.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   Three **Activate factor for user** events appear at the same time with **Okta Verify** as the target, one for each verification method enrolled with the app
 
 <p align="center">
   <img src="Images/Image%2059.PNG" alt="Image 59">
@@ -472,8 +572,11 @@
 1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then **Sign Out**
 2. On your phone turn off wifi so your on cellular date then log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then sign out
 3. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
-4. In the **Search** bar enter the following command:
-   `eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+4. Search for sign in sessions started by Jordan Ellis to compare the two sign ins:
+   ```text
+   eventType eq "user.session.start" and actor.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   Two **User login to Okta** events appear, one from the computer and one from the phone, each with a different IP address
 
 <p align="center">
   <img src="Images/Image%2062.PNG" alt="Image 62">
@@ -505,15 +608,18 @@
   <img src="Images/Image%2065.png" alt="Image 65">
 </p>
 
-4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+4. On your phone with WiFi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incognito** browser. The sign in is refused with a permission error
 
 <p align="center">
-  <img src="Images/Image%2066.webp" alt="Image 66" width="300">>
+  <img src="Images/Image%2066.webp" alt="Image 66">
 </p>
 
 5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
-6. In the **Search** bar enter the following command:
-   `eventType eq "security.request.blocked"`
+6. Search for requests stopped by a blocklist zone to confirm the phone was blocked:
+   ```text
+   eventType eq "security.request.blocked"
+   ```
+   The **Blocked request from IP** event appears with **Okta System** as the actor, the phone's IP, and **NETWORK_ZONE_BLACKLIST** as the reason under **Outcome**
 
 <p align="center">
   <img src="Images/Image%2067.PNG" alt="Image 67">
@@ -649,24 +755,33 @@
 ### Verify In System Logs
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
-2. In the **Search** bar enter the following command:
-   `eventType eq "policy.lifecycle.create"`
+2. Search for policy creation events to confirm the session policy was created:
+   ```text
+   eventType eq "policy.lifecycle.create"
+   ```
+   The **Create policy** event appears with your admin account as the actor and **Kennon Test Session Policy** as the target
 
 <p align="center">
   <img src="Images/Image%2082.PNG" alt="Image 82">
   <img src="Images/Image%2083.png" alt="Image 83">
 </p>
 
-3. In the **Search** bar enter the following command:
-   `eventType eq "policy.rule.add"`
+3. Search for policy rule additions to confirm both session rules were created:
+   ```text
+   eventType eq "policy.rule.add"
+   ```
+   **Add policy rule** events appear for **Inside Kennon HQ Rule** and **Outside Zone Rule**, both under **Kennon Test Session Policy**
 
 <p align="center">
   <img src="Images/Image%2084.PNG" alt="Image 84">
   <img src="Images/Image%2085.png" alt="Image 85">
 </p>
 
-4. In the **Search** bar enter the following command:
-   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"`
+4. Search for sign on policy evaluations for Jordan Ellis to see which session rule matched in each location:
+   ```text
+   eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech"
+   ```
+   The computer sign in from your public IP matches **Inside Kennon HQ Rule**, and the phone sign in from the cellular IP matches **Outside Zone Rule**, confirming the Kennon HQ zone controls which rule applies
 
 <p align="center">
   <img src="Images/Image%2086.PNG" alt="Image 86">
@@ -842,48 +957,66 @@
 ### Verify in System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
-2. In the **Search** bar enter the following command:
-   `eventType eq "policy.lifecycle.create" and target.displayName eq "Kennon Intranet Policy"`
+2. Search for policy creation events filtered to Kennon Intranet Policy to confirm the app policy was created:
+   ```text
+   eventType eq "policy.lifecycle.create" and target.displayName eq "Kennon Intranet Policy"
+   ```
+   The **Create policy** event appears with your admin account as the actor and **Kennon Intranet Policy** as the target
 
 <p align="center">
   <img src="Images/Image%20107.PNG" alt="Image 107">
   <img src="Images/Image%20108.PNG" alt="Image 108">
 </p>
 
-3. In the **Search** bar enter the following command:
-   `eventType eq "policy.rule.add"`
+3. Search for policy rule additions to confirm all three app rules were created:
+   ```text
+   eventType eq "policy.rule.add"
+   ```
+   **Add policy rule** events appear for **HighSecurity Intranet Rule**, **Standard Outside HQ Rule** and **Standard Inside HQ Rule**, all under **Kennon Intranet Policy**
 
 <p align="center">
   <img src="Images/Image%20109.PNG" alt="Image 109">
   <img src="Images/Image%20110.png" alt="Image 110">
 </p>
 
-4. In the **Search** bar enter the following command:
-   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "morgan.reyes@kennon.tech"`
+4. Search for sign on policy evaluations for Morgan Reyes to confirm the app challenged on every launch:
+   ```text
+   eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   Two **Bookmark App** events match **HighSecurity Intranet Rule** with a **CHALLENGE** outcome, one for each time Kennon Intranet was opened, while Morgan's sign in just before matched **Inside Kennon HQ Rule**
 
 <p align="center">
   <img src="Images/Image%20111.PNG" alt="Image 111">
   <img src="Images/Image%20112.png" alt="Image 112">
 </p>
 
-5. In the **Search** bar enter the following command:
-   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech" and outcome.result eq "ALLOW"`
+5. Search for allowed sign on policy evaluations for Jordan Ellis to see which app rule matched in each location:
+   ```text
+   eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech" and outcome.result eq "ALLOW"
+   ```
+   The computer launch matches **Standard Inside HQ Rule** and the phone launch matches **Standard Outside HQ Rule**, both with an **ALLOW** outcome and no extra prompt
 
 <p align="center">
   <img src="Images/Image%20113.PNG" alt="Image 113">
   <img src="Images/Image%20114.png" alt="Image 114">
 </p>
 
-6. In the **Search** bar enter the following command:
-   `eventType eq "user.authentication.sso" and actor.alternateId eq "morgan.reyes@kennon.tech"`
+6. Search for app sign ons by Morgan Reyes to confirm access to Kennon Intranet after verifying:
+   ```text
+   eventType eq "user.authentication.sso" and actor.alternateId eq "morgan.reyes@kennon.tech"
+   ```
+   The **User single sign on to app** event appears with **Bookmark App** as the target and a **SUCCESS** outcome
 
 <p align="center">
   <img src="Images/Image%20115.PNG" alt="Image 115">
   <img src="Images/Image%20116.png" alt="Image 116">
 </p>
 
-7. In the **Search** bar enter the following command:
-   `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech" and target.displayName eq "Bookmark App"`
+7. Search for app sign ons by Jordan Ellis filtered to the Bookmark App to confirm access from both locations:
+   ```text
+   eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech" and target.displayName eq "Bookmark App"
+   ```
+   Two **User single sign on to app** events appear with a **SUCCESS** outcome, one from your public IP and one from the cellular IP
 
 <p align="center">
   <img src="Images/Image%20117.PNG" alt="Image 117">
@@ -1048,58 +1181,76 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 ### Verify in the System Log
 
 1. Open the **Reports** dropdown then **System Log**
-2. In the **Search** bar enter the following command:
-   `eventType eq "policy.lifecycle.delete"`
+2. Search for policy deletions to confirm every policy from this lab was removed:
+   ```text
+   eventType eq "policy.lifecycle.delete"
+   ```
+   **Delete policy** events appear for **Kennon Intranet Policy**, **Kennon Test Session Policy**, **Standard Enrollment Policy**, **HighSecurity Enrollment Policy** and **HighSecurity Password Policy**, in reverse order of creation
 
 <p align="center">
   <img src="Images/Image%20134.PNG" alt="Image 134">
   <img src="Images/Image%20135.png" alt="Image 135">
 </p>
 
-3. In the **Search** bar enter the following command:
-   `eventType eq "policy.rule.delete"`
+3. Search for policy rule deletions to confirm the rules added to built in policies were removed:
+   ```text
+   eventType eq "policy.rule.delete"
+   ```
+   **Delete policy rule** events appear for **Test Groups Enrollment Rule** and **Standard Dashboard Rule**, along with the rules Okta removed automatically when their policies were deleted
 
 <p align="center">
   <img src="Images/Image%20136.PNG" alt="Image 136">
   <img src="Images/Image%20137.png" alt="Image 137">
 </p>
 
-4. In the **Search** bar enter the following command:
-   `eventType eq "zone.delete"`
+4. Search for network zone deletions to confirm Kennon HQ was removed:
+   ```text
+   eventType eq "zone.delete"
+   ```
+   The **Network zone delete** event appears with your admin account as the actor and **Kennon HQ** as the target
 
 <p align="center">
   <img src="Images/Image%20138.PNG" alt="Image 138">
   <img src="Images/Image%20139.png" alt="Image 139">
 </p>
 
-5. In the **Search** bar enter the following command:
-   `eventType eq "application.lifecycle.delete"`
+5. Search for application deletions to confirm Kennon Intranet was removed:
+   ```text
+   eventType eq "application.lifecycle.delete"
+   ```
+   The application delete event appears with your admin account as the actor and **Kennon Intranet** (shown as **Bookmark App**) as the target
 
 <p align="center">
   <img src="Images/Image%20140.PNG" alt="Image 140">
   <img src="Images/Image%20141.png" alt="Image 141">
 </p>
 
-6. In the **Search** bar enter the following command:
-   `eventType eq "user.lifecycle.delete.completed"`
+6. Search for completed user deletions to confirm both test users were removed:
+   ```text
+   eventType eq "user.lifecycle.delete.completed"
+   ```
+   Delete events appear for **Morgan Reyes** and **Jordan Ellis** with your admin account as the actor
 
 <p align="center">
   <img src="Images/Image%20142.PNG" alt="Image 142">
   <img src="Images/Image%20143.png" alt="Image 143">
 </p>
 
-7. In the **Search** bar enter the following command:
-   `eventType eq "group.lifecycle.delete"`
+7. Search for group deletions to confirm both test groups were removed:
+   ```text
+   eventType eq "group.lifecycle.delete"
+   ```
+   Delete events appear for **AuthPolicy HighSecurity** and **AuthPolicy Standard** with your admin account as the actor
 
 <p align="center">
   <img src="Images/Image%20144.PNG" alt="Image 144">
   <img src="Images/Image%20145.png" alt="Image 145">
 </p>
 
+---
 
+## Closing Note
 
+This lab built a layered authentication setup for Kennon Technologies using authenticators, enrollment policies, a network zone, a global session policy, and an app level authentication policy. Sign ins inside Kennon HQ had less friction, while sign ins outside the zone required MFA. HighSecurity users were held to Okta Verify by the app policy even when the session policy required nothing more than a password.
 
-
-
-   
-
+Troubleshooting also showed a few behaviors worth remembering. An optional enrollment policy doesn't help if the authentication policy only accepts factors the user hasn't enrolled. Newer enrollment policies depend on the Okta Account Management Policy. Okta evaluates rules from the top down and applies the first match. Together, these show why policy order and scope matter as much as the settings themselves.
