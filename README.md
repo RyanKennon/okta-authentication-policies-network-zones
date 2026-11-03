@@ -508,7 +508,7 @@
 4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 
 <p align="center">
-  <img src="Images/Image%2066.webp" alt="Image 66">
+  <img src="Images/Image%2066.webp" alt="Image 66" width="300">>
 </p>
 
 5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
@@ -634,7 +634,7 @@
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2080.webp" alt="Image 80">
+  <img src="Images/Image%2080.webp" alt="Image 80" width="300">>
 </p>
 
 ### Another Test
@@ -784,8 +784,8 @@
 3. Confirm that **HighSecurity Intranet Rule** is priority 1, **Standard Inside HQ Rule** is priority 2, **Standard Outsude HQ Rule** is priority 3, and the **Catch-All Rule** is priority 4
 
 <p align="center">
-  <img src="Images/Image%2099.PNG" alt="Image 99">
-  <img src="Images/Image%20100.PNG" alt="Image 100">
+  <img src="Images/Image%2099.PNG" alt="Image 99"> <br>
+  <img src="Images/Image%20100.PNG" alt="Image 100"> <br>
   <img src="Images/Image%20101.PNG" alt="Image 101">
 </p>
 
@@ -836,7 +836,7 @@
 7. Confirm it opens without any additional verification necessary
 
 <p align="center">
-  <img src="Images/Image%20106.webp" alt="Image 106">
+  <img src="Images/Image%20106.webp" alt="Image 106" width="300">>
 </p>
 
 ### Verify in System Log
