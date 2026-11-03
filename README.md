@@ -508,7 +508,7 @@
 4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 
 <p align="center">
-  <img src="Images/Image%2066.png" alt="Image 66">
+  <img src="Images/Image%2066.webp" alt="Image 66">
 </p>
 
 5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
@@ -517,7 +517,7 @@
 
 <p align="center">
   <img src="Images/Image%2067.PNG" alt="Image 67">
-  <img src="Images/Image%2068.png" alt="Image 68">
+  <img src="Images/Image%2068.webp" alt="Image 68">
 </p>
 
 ---
@@ -634,7 +634,7 @@
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2080.png" alt="Image 80">
+  <img src="Images/Image%2080.webp" alt="Image 80">
 </p>
 
 ### Another Test
@@ -836,7 +836,7 @@
 7. Confirm it opens without any additional verification necessary
 
 <p align="center">
-  <img src="Images/Image%20106.png" alt="Image 106">
+  <img src="Images/Image%20106.webp" alt="Image 106">
 </p>
 
 ### Verify in System Log
