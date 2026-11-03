@@ -41,7 +41,7 @@
    - **User Must Change Password on First Login:** Uncheck
   
 <p align="center">
-  <img src="Images/Image%204.PNG" alt="Image 4">
+  <img src="Images/Image%204.png" alt="Image 4">
 </p>
 
 3. Create a second user with the following information:
@@ -56,8 +56,8 @@
    - **User Must Change Password on First Login:** Uncheck
   
 <p align="center">
-  <img src="Images/Image%205.PNG" alt="Image 5">
-  <img src="Images/Image%206.PNG" alt="Image 6">
+  <img src="Images/Image%205.png" alt="Image 5">
+  <img src="Images/Image%206.png" alt="Image 6">
 </p>
 
 ### Create Test App
@@ -111,7 +111,7 @@
 
 <p align="center">
   <img src="Images/Image%2013.PNG" alt="Image 13">
-  <img src="Images/Image%2014.PNG" alt="Image 14">
+  <img src="Images/Image%2014.png" alt="Image 14">
 </p>
 
 3. Use the following search prompt then confirm **Add to Group** event appears:
@@ -119,7 +119,7 @@
 
 <p align="center">
   <img src="Images/Image%2015.PNG" alt="Image 15">
-  <img src="Images/Image%2016.PNG" alt="Image 16">
+  <img src="Images/Image%2016.png" alt="Image 16">
 </p>
 
 4. Use the following search prompt then confirm **Add to Application** event appears:
@@ -127,7 +127,7 @@
 
 <p align="center">
   <img src="Images/Image%2017.PNG" alt="Image 17">
-  <img src="Images/Image%2018.PNG" alt="Image 18">
+  <img src="Images/Image%2018.png" alt="Image 18">
 </p>
 
 5. Use the following search prompt then confirm **Login Success** event appears:
@@ -135,7 +135,7 @@
 
 <p align="center">
   <img src="Images/Image%2019.PNG" alt="Image 19">
-  <img src="Images/Image%2020.PNG" alt="Image 20">
+  <img src="Images/Image%2020.png" alt="Image 20">
 </p>
 
 6. Use the following search prompt then confirm **Evaluation of Sign On Policy** event appears:
@@ -143,7 +143,7 @@
 
 <p align="center">
   <img src="Images/Image%2021.PNG" alt="Image 21">
-  <img src="Images/Image%2022.PNG" alt="Image 22">
+  <img src="Images/Image%2022.png" alt="Image 22">
 </p>
 
 7. Use the following search prompt then confirm **User Sign On to App** event appears:
@@ -151,7 +151,7 @@
 
 <p align="center">
   <img src="Images/Image%2023.PNG" alt="Image 23">
-  <img src="Images/Image%2024.PNG" alt="Image 24">
+  <img src="Images/Image%2024.png" alt="Image 24">
 </p>
 
 ---
@@ -246,13 +246,13 @@
 3. Open **Morgan Reyes** profile then confirm that **Morgan Reyes** has the **Locked Out** status
 
 <p align="center">
-  <img src="Images/Image%2034.PNG" alt="Image 34">
+  <img src="Images/Image%2034.png" alt="Image 34">
 </p>
 
 4. Press **Unlock Account** and confirm that **Morgan Reyes** has the **Active** status
 
 <p align="center">
-  <img src="Images/Image%2035.PNG" alt="Image 35">
+  <img src="Images/Image%2035.png" alt="Image 35">
 </p>
 
 5. Back in the **Incognito** browser confirm successfully log into **Okta** as **Morgan Reyes** using a password then sign out
@@ -278,7 +278,7 @@
 
 <p align="center">
   <img src="Images/Image%2037.PNG" alt="Image 37">
-  <img src="Images/Image%2038.PNG" alt="Image 38">
+  <img src="Images/Image%2038.png" alt="Image 38">
 </p>
 
 3. Use the following search prompt then confirm **Add Policy Rule** event appears:
@@ -286,7 +286,7 @@
 
 <p align="center">
   <img src="Images/Image%2039.PNG" alt="Image 39">
-  <img src="Images/Image%2040.PNG" alt="Image 40">
+  <img src="Images/Image%2040.png" alt="Image 40">
 </p>
 
 4. Use the following search prompt then confirm **Morgan's Password Change** event appears:
@@ -294,7 +294,7 @@
 
 <p align="center">
   <img src="Images/Image%2041.PNG" alt="Image 41">
-  <img src="Images/Image%2042.PNG" alt="Image 42">
+  <img src="Images/Image%2042.png" alt="Image 42">
 </p>
 
 5. Use the following search prompt then confirm **Morgan's Account Lock Out** event appears:
@@ -302,7 +302,7 @@
 
 <p align="center">
   <img src="Images/Image%2043.PNG" alt="Image 43">
-  <img src="Images/Image%2044.PNG" alt="Image 44">
+  <img src="Images/Image%2044.png" alt="Image 44">
 </p>
 
 6. Use the following search prompt then confirm **Morgan's Account Unlock** event appears:
@@ -310,7 +310,7 @@
 
 <p align="center">
   <img src="Images/Image%2045.PNG" alt="Image 45">
-  <img src="Images/Image%2046.PNG" alt="Image 46">
+  <img src="Images/Image%2046.png" alt="Image 46">
 </p>
 
 ### Reset Okta Verify for Both Users
@@ -319,7 +319,7 @@
 2. Select **Morgan Reyes** open the **More Actions** dropdown then select **Reset Authenticators**
 
 <p align="center">
-  <img src="Images/Image%2047.PNG" alt="Image 47">
+  <img src="Images/Image%2047.png" alt="Image 47">
 </p>
 
 3. Select **Okta Verify** then **Reset Selected Authenticators**
@@ -431,7 +431,7 @@
 
 <p align="center">
   <img src="Images/Image%2055.PNG" alt="Image 55">
-  <img src="Images/Image%2056.PNG" alt="Image 56">
+  <img src="Images/Image%2056.png" alt="Image 56">
 </p>
 
 3. Use the following search prompt then confirm **Add Policy Rule** event appears:
@@ -439,7 +439,7 @@
 
 <p align="center">
   <img src="Images/Image%2057.PNG" alt="Image 57">
-  <img src="Images/Image%2058.PNG" alt="Image 58">
+  <img src="Images/Image%2058.png" alt="Image 58">
 </p>
 
 4. Use the following search prompt then confirm **Activate Factor** event appears:
@@ -447,7 +447,7 @@
 
 <p align="center">
   <img src="Images/Image%2059.PNG" alt="Image 59">
-  <img src="Images/Image%2060.PNG" alt="Image 60">
+  <img src="Images/Image%2060.png" alt="Image 60">
 </p>
 
 ---
@@ -464,7 +464,7 @@
    - **Gateway IPs:** Your Current IP Address
 
 <p align="center">
-  <img src="Images/Image%2061.PNG" alt="Image 61">
+  <img src="Images/Image%2061.png" alt="Image 61">
 </p>
 
 ### Confirm the Zone Detects Sign Ins
@@ -482,13 +482,13 @@
 5. Expand the computer sign in and open **Client**. The IP address matches your public IP inside Kennon HQ
 
 <p align="center">
-  <img src="Images/Image%2063.PNG" alt="Image 63">
+  <img src="Images/Image%2063.png" alt="Image 63">
 </p>
 
 6. Expand the phone sign in and open **Client**. The IP address is a different cellular IP outside Kennon HQ
 
 <p align="center">
-  <img src="Images/Image%2064.PNG" alt="Image 64">
+  <img src="Images/Image%2064.png" alt="Image 64">
 </p>
 
 ### Create a Blocklist Zone
@@ -502,13 +502,13 @@
    - **Block Access from IPs Matching Conditions Listed in this Zone:** Check
 
 <p align="center">
-  <img src="Images/Image%2065.PNG" alt="Image 65">
+  <img src="Images/Image%2065.png" alt="Image 65">
 </p>
 
 4. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 
 <p align="center">
-  <img src="Images/Image%2066.PNG" alt="Image 66">
+  <img src="Images/Image%2066.png" alt="Image 66">
 </p>
 
 5. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
@@ -517,7 +517,7 @@
 
 <p align="center">
   <img src="Images/Image%2067.PNG" alt="Image 67">
-  <img src="Images/Image%2068.PNG" alt="Image 68">
+  <img src="Images/Image%2068.png" alt="Image 68">
 </p>
 
 ---
@@ -627,14 +627,14 @@
 2. Find **Kennon Blocked IPs** then open the **Active** dropdown then select **Inactive** then **Delete**
 
 <p align="center">
-  <img src="Images/Image%2079.PNG" alt="Image 79">
+  <img src="Images/Image%2079.png" alt="Image 79">
 </p>
 
 3. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2080.PNG" alt="Image 80">
+  <img src="Images/Image%2080.png" alt="Image 80">
 </p>
 
 ### Another Test
@@ -654,7 +654,7 @@
 
 <p align="center">
   <img src="Images/Image%2082.PNG" alt="Image 82">
-  <img src="Images/Image%2083.PNG" alt="Image 83">
+  <img src="Images/Image%2083.png" alt="Image 83">
 </p>
 
 3. In the **Search** bar enter the following command:
@@ -662,7 +662,7 @@
 
 <p align="center">
   <img src="Images/Image%2084.PNG" alt="Image 84">
-  <img src="Images/Image%2085.PNG" alt="Image 85">
+  <img src="Images/Image%2085.png" alt="Image 85">
 </p>
 
 4. In the **Search** bar enter the following command:
@@ -670,7 +670,7 @@
 
 <p align="center">
   <img src="Images/Image%2086.PNG" alt="Image 86">
-  <img src="Images/Image%2087.PNG" alt="Image 87">
+  <img src="Images/Image%2087.png" alt="Image 87">
 </p>
 
 ---
@@ -836,7 +836,7 @@
 7. Confirm it opens without any additional verification necessary
 
 <p align="center">
-  <img src="Images/Image%20106.PNG" alt="Image 106">
+  <img src="Images/Image%20106.png" alt="Image 106">
 </p>
 
 ### Verify in System Log
@@ -855,7 +855,7 @@
 
 <p align="center">
   <img src="Images/Image%20109.PNG" alt="Image 109">
-  <img src="Images/Image%20110.PNG" alt="Image 110">
+  <img src="Images/Image%20110.png" alt="Image 110">
 </p>
 
 4. In the **Search** bar enter the following command:
@@ -863,7 +863,7 @@
 
 <p align="center">
   <img src="Images/Image%20111.PNG" alt="Image 111">
-  <img src="Images/Image%20112.PNG" alt="Image 112">
+  <img src="Images/Image%20112.png" alt="Image 112">
 </p>
 
 5. In the **Search** bar enter the following command:
@@ -871,7 +871,7 @@
 
 <p align="center">
   <img src="Images/Image%20113.PNG" alt="Image 113">
-  <img src="Images/Image%20114.PNG" alt="Image 114">
+  <img src="Images/Image%20114.png" alt="Image 114">
 </p>
 
 6. In the **Search** bar enter the following command:
@@ -879,7 +879,7 @@
 
 <p align="center">
   <img src="Images/Image%20115.PNG" alt="Image 115">
-  <img src="Images/Image%20116.PNG" alt="Image 116">
+  <img src="Images/Image%20116.png" alt="Image 116">
 </p>
 
 7. In the **Search** bar enter the following command:
@@ -887,7 +887,7 @@
 
 <p align="center">
   <img src="Images/Image%20117.PNG" alt="Image 117">
-  <img src="Images/Image%20118.PNG" alt="Image 118">
+  <img src="Images/Image%20118.png" alt="Image 118">
 </p>
 
 ---
@@ -946,7 +946,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 3. Press the **X**
 
 <p align="center">
-  <img src="Images/Image%20122.PNG" alt="Image 122">
+  <img src="Images/Image%20122.png" alt="Image 122">
 </p>
 
 ### Remove the Added Policy Rules
@@ -1020,14 +1020,14 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 3. Then press **Delete**
 
 <p align="center">
-  <img src="Images/Image%20130.PNG" alt="Image 130">
+  <img src="Images/Image%20130.png" alt="Image 130">
 </p>
 
 4. Open **Jordan Ellis** profile then open the **More Actions** dropdown then **Deactivate**
 5. Then press **Delete**
 
 <p align="center">
-  <img src="Images/Image%20131.PNG" alt="Image 131">
+  <img src="Images/Image%20131.png" alt="Image 131">
 </p>
 
 ### Remove Groups
@@ -1053,7 +1053,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20134.PNG" alt="Image 134">
-  <img src="Images/Image%20135.PNG" alt="Image 135">
+  <img src="Images/Image%20135.png" alt="Image 135">
 </p>
 
 3. In the **Search** bar enter the following command:
@@ -1061,7 +1061,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20136.PNG" alt="Image 136">
-  <img src="Images/Image%20137.PNG" alt="Image 137">
+  <img src="Images/Image%20137.png" alt="Image 137">
 </p>
 
 4. In the **Search** bar enter the following command:
@@ -1069,7 +1069,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20138.PNG" alt="Image 138">
-  <img src="Images/Image%20139.PNG" alt="Image 139">
+  <img src="Images/Image%20139.png" alt="Image 139">
 </p>
 
 5. In the **Search** bar enter the following command:
@@ -1077,7 +1077,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20140.PNG" alt="Image 140">
-  <img src="Images/Image%20141.PNG" alt="Image 141">
+  <img src="Images/Image%20141.png" alt="Image 141">
 </p>
 
 6. In the **Search** bar enter the following command:
@@ -1085,7 +1085,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20142.PNG" alt="Image 142">
-  <img src="Images/Image%20143.PNG" alt="Image 143">
+  <img src="Images/Image%20143.png" alt="Image 143">
 </p>
 
 7. In the **Search** bar enter the following command:
@@ -1093,7 +1093,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 <p align="center">
   <img src="Images/Image%20144.PNG" alt="Image 144">
-  <img src="Images/Image%20145.PNG" alt="Image 145">
+  <img src="Images/Image%20145.png" alt="Image 145">
 </p>
 
 
