@@ -640,16 +640,88 @@
 
 # Image 103
 
+### Test Morgan Reyes
 
+1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
+2. On **Morgan's Dashboard** select **Kennon Intranet**
+3. Confirm **Okta Verify** is prompted before being taken to example.com
 
+# Image 104
 
+4. Close the **exmaple.com** tab then on **Morgan's Dashboard** open **Kennon Intranet** again
+5. Confirm **Okta Verify** is prompted again
 
+# Image 105
 
+6. **Sign Out** of Morgan Reyes's account
 
+### Test Jordan Inside and Outside the Zone
 
+1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+2. On **Jordan's Dashboard** open **Kennon Intranet**
+3. Confirm it opens without any additional verification necessary
+4. **Sign Out** of Jordan Ellis's account
+5. On your phone disconnect from Wi-Fi then log into **Jordan Ellis's** account in an **Incognito** browser
+6. On **Jordan's Dashboard** open **Kennon Intranet**
+7. Confirm it opens without any additional verification necessary
 
+# Image 106
 
+### Verify in System Log
 
+1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
+2. In the **Search** bar enter the following command:
+   `eventType eq "policy.lifecycle.create" and target.displayName eq "Kennon Intranet Policy"`
+
+# Image 107
+# Image 108 hide ip address
+
+3. In the **Search** bar enter the following command:
+   `eventType eq "policy.rule.add"`
+
+# Image 109
+# Image 110
+
+4. In the **Search** bar enter the following command:
+   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "morgan.reyes@kennon.tech"`
+
+# Image 111
+# Image 112
+
+5. In the **Search** bar enter the following command:
+   `eventType eq "policy.evaluate_sign_on" and actor.alternateId eq "jordan.ellis@kennon.tech" and outcome.result eq "ALLOW"`
+
+# Image 113
+# Image 114
+
+6. In the **Search** bar enter the following command:
+   `eventType eq "user.authentication.sso" and actor.alternateId eq "morgan.reyes@kennon.tech"`
+
+# Image 115
+# Image 116
+
+7. In the **Search** bar enter the following command:
+   `eventType eq "user.authentication.sso" and actor.alternateId eq "jordan.ellis@kennon.tech" and target.displayName eq "Bookmark App"`
+
+# Image 117
+# Image 118
+
+---
+
+## Phase 7: Test Matrix Summary
+
+The table below combines every sign in tested in this lab, showing what each user was asked for and which rules Okta matched.
+
+| User | Location | Resource | Required | Session Rule | App Rule |
+|---|---|---|---|---|---|
+| Jordan Ellis | Inside Kennon HQ | Okta Dashboard | Password | Inside Kennon HQ Rule | Standard Dashboard Rule |
+| Jordan Ellis | Outside Kennon HQ | Okta Dashboard | Password and Email | Outside Zone Rule | Standard Dashboard Rule |
+| Jordan Ellis | Inside Kennon HQ | Kennon Intranet | No additional prompt | N/A | Standard Inside HQ Rule |
+| Jordan Ellis | Outside Kennon HQ | Kennon Intranet | No additional prompt | N/A | Standard Outside HQ Rule |
+| Morgan Reyes | Inside Kennon HQ | Okta Dashboard | Password and Okta Verify | Inside Kennon HQ Rule | Catch-all Rule |
+| Morgan Reyes | Inside Kennon HQ | Kennon Intranet | Okta Verify on every launch | N/A | HighSecurity Intranet Rule |
+
+Morgan required Okta Verify inside Kennon HQ even though the session rule required no MFA, showing that the stricter policy always wins.
 
 
 
