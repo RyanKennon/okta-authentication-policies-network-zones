@@ -539,11 +539,106 @@
 
 ## 6) App Level Authentication Policies
 
+### Create Intranet Policy
 
+1. In the **Okta Administrator Console** open the **Security** dropdown and then **Authentication Policies**
+2. Select **App Sign-In** then **Create Policy**
+3. Create a policy with the following information:
 
+   - **Name:** Kennon Intranet Policy
+   - **Description:** Zone and group based access for Kennon Intranet
 
+# Image 88
 
+### Add HighSecurity Intranet Rule
 
+1. With the **Kennon Intranet Policy** open select **Add Rule**
+2. Fill out the following information then **Save:**
+
+   - **General Information**
+   - **Rule Name:** HighSecurity Intranet Rule
+  
+# Image 89
+
+   - **IF**
+   - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy HighSecurity
+
+# Image 90
+
+   - **Then**
+   - **Then Access is:** Allowed after successful authenticaion
+   - **User Must Authenticate with:** Any 2 factor types
+   - **Authentication Methods:** Disallow specific authentication Email
+
+# Image 91
+
+   - **When to Prompt for Authentication**
+   - **Re-Authentication Frequency is:** Every sign in attempt
+
+# Image 92
+
+### Add Standard Outside HQ Rule
+
+1. With the **Kennon Intranet Policy** open select **Add Rule**
+2. Fill out the following information then **Save:**
+
+   - **General Information**
+   - **Rule Name:** Standard Outside HQ Rule
+  
+# Image 93
+
+   - **IF**
+   - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy Standard
+   - **And User's IP is:** Not in any of the following zones Kennon HQ
+
+# Image 94
+
+   - **Then**
+   - **Then Access is:** Allowed after successful authenticaion
+   - **User Must Authenticate with:** Any 2 factor types
+   - **Authentication Methods:** Allow any method that can be used to meet the requirement
+
+# Image 95
+
+### Add Standard Inside HQ Rule
+
+1. With the **Kennon Intranet Policy** open select **Add Rule**
+2. Fill out the following information then **Save:**
+
+   - **General Information**
+   - **Rule Name:** Standard Inside HQ Rule
+  
+# Image 96
+
+   - **IF**
+   - **And User's Group Membership Includes:** At least one of the following groups AuthPolicy Standard
+   - **And User's IP is:** In zone Kennon HQ
+
+# Image 97
+
+   - **Then Access is:** Allowed after successful authentication
+   - **User Must Authenticate with:** Password
+
+# Image 98
+
+3. Confirm that **HighSecurity Intranet Rule** is priority 1, **Standard Inside HQ Rule** is priority 2, **Standard Outsude HQ Rule** is priority 3, and the **Catch-All Rule** is priority 4
+
+# Image 99
+# Image 100
+# Image 101
+
+### Assign Policy to Kennon Intranet
+
+1. In the **Kennon Intranet Policy** open the **Apps** tab then **Add App**
+2. Find **Kennon Intranet** then press *Add** then **Done**
+
+# Image 102
+
+3. Open the **Applications and Resources** dropdown the **Applications**
+4. Select **Kennon Intranet** then open the **Sign On** tab
+5. Confirm **User Authentication** shows **Kennon Intranet Policy**
+
+# Image 103
 
 
 
