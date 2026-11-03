@@ -729,24 +729,151 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 ### Remove the Kennon Intranet Policy
 
+1. In the **Okta Administrator Console** open the **Applications and Resources** dropdown and then **Applications**
+2. Select the **Kennon Intranet App** then open the **Sign On** tab
+3. Under **User Authentication** press **Edit**
+4. Switch the policy to **Any Two Factors** then **Save**
+
+# Image 119
+
+5. Open the **Security** dropdown and then **Authentication Policies**
+6. Press the **Three Dots** to the right of **Kennon Intranet Policy** then **Delete**
+
+# Image 120
+
+### Remove the Session Policy
+
+1. Open the **Security** dropdown and then **Global Session Policy**
+2. Next to the **Kennon Test Session Policy** open the **Active** dopdown and select **Deactivate**
+3. Press **Delete**
+
+# Image 121
+
+### Remove the Kennon HQ Zone
+
+1. Open the **Security** dropdown and then **Networks**
+2. Next to **Kennon HQ** open the **Active** dropdown then select **Inactive**
+3. Press the **X**
+
+# Image 122
+
+### Remove the Added Policy Rules
+
+1. Open the **Security** dropdown and then **Authentication Policies** then **Okta Account Management**
+2. Find **Test Groups Enrollment Rule** then open the **Actions** dropdown then **Deactivate**
+3. Open the **Actions** dropdown again then **Delete**
+
+# Image 123
+
+4. At the top of the page press **Back to All Authentication Policies** then press **App Sign-In**
+5. Open **Okta Dashboard** then find the **Standard Dashboard Rule**
+6. Open the **Actions** dropdown then **Deactivate**
+7. Open the **Actions** dropdown again then press **Delete**
+
+# Image 124
+
+### Remove Enrollment Policies
+
+1. Open the **Security** dropdown then **Authenticators** then open the **Enrollment** tab
+2. Find the **Standard Enrollment Policy** then open the **Actions** dropdown and press **Delete**
+
+# Image 125
+
+3. Find the **HighSecurity Enrollment Policy** then open the **Actions** dropdown and press **Delete**
+
+# Image 126
+
+### Remove Password Policy
+
+1. Open the **Security** dropdown then **Authenticators**
+2. Find **Password** then open the **Actions** dropdown and select **Edit**
+3. Select **HighSecurity Password Policy** and press **Delete**
+
+# Image 127
+
+### Revert Okta Verify
+
+1. Open the **Security** dropdown then **Authenticators**
+2. Find **Okta Verify** then open the **Actions** dropdown and select **Edit**
+3. Set **Number Challenge for Okta Verify Push** to **Never** then **Save**
+
+# Image 128
+
+### Remove the Kennon Intranet App
+
+1. Open the **Applications and Resources** dropdown then **Applications** then open **Kennon Intranet**
+2. Open the **Active** dropdown then **Deactivate**
+3. Open the **Inactive** dropdown then **Delete**
+
+# Image 129
+
+### Remove Test Users
+
+1. Open the **Directory** dropdown then **People** then open **Morgan Reyes** profile
+2. Open the **More Actions** dropdown then **Deactivate**
+3. Then press **Delete**
+
+# Image 130
+
+4. Open **Jordan Ellis** profile then open the **More Actions** dropdown then **Deactivate**
+5. Then press **Delete**
+
+# Image 131
+
+### Remove Groups
+
+1. Open the **Directory** dropdown then **Groups** then open **AuthPolicy HighSecurity**
+2. Open the **Actions** dropdown then **Delete**
+
+# Image 132
+
+3. Open the **AuthPolicy Standard** group then open the **Actions** dropdown then **Delete**
+
+# Image 133
+
+### Verify in the System Log
+
+1. Open the **Reports** dropdown then **System Log**
+2. In the **Search** bar enter the following command:
+   `eventType eq "policy.lifecycle.delete"`
+
+# Image 134
+# Image 135
+
+3. In the **Search** bar enter the following command:
+   `eventType eq "policy.rule.delete"`
+
+# Image 136
+# Image 137
+
+4. In the **Search** bar enter the following command:
+   `eventType eq "zone.delete"`
+
+# Image 138
+# Image 139
+
+5. In the **Search** bar enter the following command:
+   `eventType eq "application.lifecycle.delete"`
+
+# Image 140
+# Image 141
+
+6. In the **Search** bar enter the following command:
+   `eventType eq "user.lifecycle.delete.completed"`
+
+# Image 142
+# Image 143
+
+7. In the **Search** bar enter the following command:
+   `eventType eq "group.lifecycle.delete"`
+
+# Image 144
+# Image 145
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
