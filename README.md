@@ -147,21 +147,21 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Confirm Sign In
 
-1. Attempt to log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
+1. Attempt to log in to **Okta** as **Jordan Ellis** in an **incognito** browser
 2. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
 <p align="center">
   <img src="Images/Image%2011.PNG" alt="Image 11">
 </p>
 
-3. Attempt to log into **Okta** as **Morgan Reyes**
+3. Attempt to log in to **Okta** as **Morgan Reyes**
 4. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
 <p align="center">
   <img src="Images/Image%2012.PNG" alt="Image 12">
 </p>
 
-### Verify in the System Log
+### Verify in System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
 2. Search for user creation events filtered to Jordan Ellis to confirm the account was created:
@@ -269,7 +269,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
    - **Password Requirements**
       - **Minimum Length:** 14
       - **Complexity Requirements:** check lower case letter, upper case letter, number, and symbol
-      - **Restrict Use of Common Passwords:** checked
+      - **Restrict Use of Common Passwords:** Check
       - **Does not Contain Part of Username / First Name / Last Name:** Check
     
 <p align="center">
@@ -293,7 +293,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test HighSecurity Password Policy
 
-1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incognito** browser
 2. When asked choose **Get a Push Notification** to confirm it’s active then finish logging in
 
 <p align="center">
@@ -317,7 +317,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Account Lockout
 
-1. Attempt to log into **Okta** as **Morgan Reyes** with an **Incorrect Password** in an **Incgonito** browser until it no longer allows a login using a password
+1. Attempt to log in to **Okta** as **Morgan Reyes** with an **Incorrect Password** in an **incognito** browser until it no longer allows a login using a password
 2. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
 3. Open **Morgan Reyes's** profile then confirm that **Morgan Reyes** has the **Locked Out** status
 
@@ -335,7 +335,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Confirm User not in Group is Unaffected
 
-1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
+1. Log in to **Okta** as **Jordan Ellis** in an **incognito** browser
 2. Click **Jordan's Name** in the top right of the screen then **Account Settings**
 3. Under **Security Methods** find **Password** then **Reset**
 4. Confirm fewer password requirements appear
@@ -507,7 +507,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test HighSecurity Policy
 
-1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incognito** browser
 2. Confirm that setting up Okta Verify is required to log in
 
 <p align="center">
@@ -569,8 +569,8 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Confirm the Zone Detects Sign Ins
 
-1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser then **Sign Out**
-2. On your phone turn off WiFi so your on cellular date then log in to **Okta** as **Jordan Ellis** in an **incgonito** browser then sign out
+1. Log in to **Okta** as **Jordan Ellis** in an **incognito** browser then **Sign Out**
+2. On your phone turn off WiFi so you’re on cellular data then log in to **Okta** as **Jordan Ellis** in an **incognito** browser then sign out
 3. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
 4. Search for sign in sessions started by Jordan Ellis to compare the two sign ins:
    ```text
@@ -740,12 +740,12 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
 <p align="center">
-  <img src="Images/Image%2080.webp" alt="Image 80" width="300">>
+  <img src="Images/Image%2080.webp" alt="Image 80">
 </p>
 
 ### Test Morgan Inside the Zone
 
-1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incognito** browser
 2. Confirm that both **Password** and **Okta Verify** are required when logging in then **Sign Out**
 
 <p align="center">
@@ -827,7 +827,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
    - **Then**
    - **Then Access is:** Allowed after successful authentication
    - **User Must Authenticate with:** Any 2 factor types
-   - **Authentication Methods:** Disallow specific authentication: Email
+   - **Authentication Methods:** Disallow specific authentication methods: Email
 
 <p align="center">
   <img src="Images/Image%2091.PNG" alt="Image 91">
@@ -924,7 +924,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Morgan Reyes
 
-1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incognito** browser
 2. On **Morgan's Dashboard** select **Kennon Intranet**
 3. Confirm **Okta Verify** is prompted before being taken to example.com
 
@@ -943,11 +943,11 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Jordan Inside and Outside the Zone
 
-1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
+1. Log in to **Okta** as **Jordan Ellis** in an **incognito** browser
 2. On **Jordan's Dashboard** open **Kennon Intranet**
 3. Confirm it opens without any additional verification necessary
 4. **Sign Out** of Jordan Ellis's account
-5. On your phone turn off Wi-Fi then log into **Jordan Ellis's** account in an **Incognito** browser
+5. On your phone turn off WiFi then log into **Jordan Ellis's** account in an **Incognito** browser
 6. On **Jordan's Dashboard** open **Kennon Intranet**
 7. Confirm it opens without any additional verification necessary
 
@@ -1179,7 +1179,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
   <img src="Images/Image%20133.PNG" alt="Image 133">
 </p>
 
-### Verify in the System Log
+### Verify in System Log
 
 1. Open the **Reports** dropdown then **System Log**
 2. Search for policy deletions to confirm every policy from this lab was removed:
