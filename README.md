@@ -480,10 +480,10 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 2. Click **Add rule** and configure the following:
 
    - **Rule Name:** Standard Dashboard Rule
-   - **And User's group membership includes:** At least one of the following groups, **AuthPolicy Standard**
+   - **And User's Group Membership Includes:** At least one of the following groups, **AuthPolicy Standard**
    - **Then Access is:** Allowed after successful authentication
-   - **User must authenticate with:** Any 2 factor types
-   - **Authentication methods:** Allow any method that can be used to meet the requirement
+   - **User Must Authenticate with:** Any 2 factor types
+   - **Authentication Methods:** Allow any method that can be used to meet the requirement
 
 <p align="center">
   <img src="Images/Image%2052.1.PNG" alt="Image 52.1">
@@ -947,7 +947,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 2. On **Jordan's Dashboard** open **Kennon Intranet**
 3. Confirm it opens without any additional verification necessary
 4. **Sign Out** of Jordan Ellis's account
-5. On your phone turn off WiFi then log into **Jordan Ellis's** account in an **incognito** browser
+5. On your phone turn off WiFi then log in to **Jordan Ellis's** account in an **incognito** browser
 6. On **Jordan's Dashboard** open **Kennon Intranet**
 7. Confirm it opens without any additional verification necessary
 
