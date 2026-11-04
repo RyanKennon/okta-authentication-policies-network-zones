@@ -75,7 +75,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%201.PNG" alt="Image 1">
 </p>
 
-3. Create a second group with the following information:
+3. Create a second group with the following information then **Save:**
    - **Name:** AuthPolicy HighSecurity
    - **Description:** Test users for strict authentication policies
   
@@ -122,7 +122,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 1. Open the **Applications and Resources** dropdown then select **Applications** then **Browse App Catalog**
 2. Search for the **Bookmark App** then **Add Integration**
-3. On the **General Settings** page enter the following infomration then press **Done:**
+3. On the **General Settings** page enter the following information then press **Done:**
    - **Application Label:** Kennon Intranet
    - **URL:** https://example.com
 
@@ -130,7 +130,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%207.PNG" alt="Image 7">
 </p>
 
-4. Open the **Sign On** tab next to **User Authentication** select **Edit**
+4. Open the **Sign On** tab then next to **User Authentication** select **Edit**
 5. For the **Authentication Policy** select **Any Two Factors** then **Save**
 
 <p align="center">
@@ -138,7 +138,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 </p>
 
 6. Open the **Assignments** tab then click the **Assign** dropdown then **Assign to Groups**
-7. Select **Assign for both **AuthPolicy Standard** and **AuthPolicy HighSecurity** then **Done**
+7. Select **Assign** for both **AuthPolicy Standard** and **AuthPolicy HighSecurity** then **Done**
 
 <p align="center">
   <img src="Images/Image%209.PNG" alt="Image 9">
@@ -147,14 +147,14 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Confirm Sign In
 
-1. Attempt to log into **Okta** as **Jordan Ellis** in an **Incgonito** browser
+1. Attempt to log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
 2. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
 <p align="center">
   <img src="Images/Image%2011.PNG" alt="Image 11">
 </p>
 
-3. Attempt to log into **Okta** as **Moragn Reyes**
+3. Attempt to log into **Okta** as **Morgan Reyes**
 4. Confirm that the **Kennon Intranet** app appears on the dashboard then **Sign Out**
 
 <p align="center">
@@ -268,9 +268,9 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
    - **Password Requirements**
       - **Minimum Length:** 14
-      - **Complexity Requirements:** check lower case, upper case letters, number, and symbol
+      - **Complexity Requirements:** check lower case letter, upper case letter, number, and symbol
       - **Restrict Use of Common Passwords:** checked
-      - **Does not Contain Part of Username / First Name / Last Name:** Checked
+      - **Does not Contain Part of Username / First Name / Last Name:** Check
     
 <p align="center">
   <img src="Images/Image%2028.PNG" alt="Image 28">
@@ -293,8 +293,8 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test HighSecurity Password Policy
 
-1. Log in to **Okta** as **Morgan.Reyes** in an **Incgonito** browser
-2. When asked choose **Get a Push Notification** to confirm its active then finish logging in
+1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
+2. When asked choose **Get a Push Notification** to confirm it’s active then finish logging in
 
 <p align="center">
   <img src="Images/Image%2031.PNG" alt="Image 31">
@@ -317,9 +317,9 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Account Lockout
 
-1. Attempt to log into **Okta** as **Morgan.Reyes** with an **Incorrect Password** in an **Incgonito** browser until it no longer allows a login using a password
+1. Attempt to log into **Okta** as **Morgan Reyes** with an **Incorrect Password** in an **Incgonito** browser until it no longer allows a login using a password
 2. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
-3. Open **Morgan Reyes** profile then confirm that **Morgan Reyes** has the **Locked Out** status
+3. Open **Morgan Reyes's** profile then confirm that **Morgan Reyes** has the **Locked Out** status
 
 <p align="center">
   <img src="Images/Image%2034.png" alt="Image 34">
@@ -331,14 +331,14 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2035.png" alt="Image 35">
 </p>
 
-5. Back in the **Incognito** browser confirm successfully log into **Okta** as **Morgan Reyes** using a password then sign out
+5. Back in the **incognito** browser confirm you can log in to **Okta** as **Morgan Reyes** using a password then sign out
 
 ### Confirm User not in Group is Unaffected
 
-1. Log in to **Okta** as **Jordan.Ellis** in an **Incgonito** browser
+1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
 2. Click **Jordan's Name** in the top right of the screen then **Account Settings**
 3. Under **Security Methods** find **Password** then **Reset**
-4. Confirm less password requirements appear
+4. Confirm fewer password requirements appear
 
 <p align="center">
   <img src="Images/Image%2036.PNG" alt="Image 36">
@@ -407,7 +407,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 ### Reset Okta Verify for Both Users
 
 1. In the **Okta Administrator Console** open the **Directory** dropdown then **People**
-2. Select **Morgan Reyes** open the **More Actions** dropdown then select **Reset Authenticators**
+2. Select **Morgan Reyes** then open the **More Actions** dropdown then select **Reset Authenticators**
 
 <p align="center">
   <img src="Images/Image%2047.png" alt="Image 47">
@@ -422,9 +422,9 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Create Standard Enrollment Policy
 
-1. In the **Okta Administration Console** open the **Security** dropdown then **Authenticators**
+1. In the **Okta Administrator Console** open the **Security** dropdown then **Authenticators**
 2. Open the **Enrollment** tab then **Add a Policy**
-3. Create a Policy with the following information then **Create Policy:**
+3. Create a policy with the following information then **Create Policy:**
 
    - **Policy Name:** Standard Enrollment Policy
    - **Policy Description:** Okta Verify optional for standard users
@@ -437,7 +437,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2049.PNG" alt="Image 49">
 </p>
 
-4. On the **Add Rule** Page enter the following information then **Create Rule:**
+4. On the **Add Rule** page enter the following information then **Create Rule:**
 
    - **Rule Name:** Standard Employee Rule
    - **If User's IP is:** Anywhere
@@ -450,7 +450,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Create HighSecurity Enrollment Policy
 
-1. Create a second Policy with the following information then **Create Policy:**
+1. Create a second policy with the following information then **Create Policy:**
 
    - **Policy Name:** HighSecurity Enrollment Policy
    - **Policy Description:** Okta Verify required for high security users
@@ -463,7 +463,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2051.PNG" alt="Image 51">
 </p>
 
-2. On the **Add Rule** Page enter the following information then **Create Rule:**
+2. On the **Add Rule** page enter the following information then **Create Rule:**
 
    - **Rule Name:** HighSecurity Enrollment Rule
    - **If User's IP is:** Anywhere
@@ -479,9 +479,9 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 1. Open the **Security** dropdown then **Authentication Policies** and select **Okta Dashboard**
 2. Click **Add rule** and configure the following:
 
-   - **Rule name:** `Standard Dashboard Rule`
-   - **AND User's group membership includes:** At least one of the following groups, **AuthPolicy Standard**
-   - **THEN Access is:** Allowed after successful authentication
+   - **Rule Name:** Standard Dashboard Rule
+   - **And User's group membership includes:** At least one of the following groups, **AuthPolicy Standard**
+   - **Then Access is:** Allowed after successful authentication
    - **User must authenticate with:** Any 2 factor types
    - **Authentication methods:** Allow any method that can be used to meet the requirement
 
@@ -498,8 +498,8 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Standard Policy
 
-1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
-2. Confirm log in success only using a password and email verification
+1. Log in to **Okta** as **Jordan Ellis** in an **incognito** browser
+2. Confirm the sign in succeeds using only a password and email verification
 
 <p align="center">
   <img src="Images/Image%2053.PNG" alt="Image 53">
@@ -507,7 +507,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test HighSecurity Policy
 
-1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
 2. Confirm that setting up Okta Verify is required to log in
 
 <p align="center">
@@ -516,7 +516,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Verify in System Logs
 
-1. In the **Okta Administration Console** open the **Reports** dropdown then **System Log**
+1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
 2. Search for policy creation events to confirm both enrollment policies were created:
    ```text
    eventType eq "policy.lifecycle.create"
@@ -569,8 +569,8 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Confirm the Zone Detects Sign Ins
 
-1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then **Sign Out**
-2. On your phone turn off wifi so your on cellular date then log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser then sign out
+1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser then **Sign Out**
+2. On your phone turn off WiFi so your on cellular date then log in to **Okta** as **Jordan Ellis** in an **incgonito** browser then sign out
 3. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
 4. Search for sign in sessions started by Jordan Ellis to compare the two sign ins:
    ```text
@@ -630,7 +630,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ## 5) Global Session Policy
 
-### Lower the Standard Dashboard Rule to One Factor
+### Lower the Standard Dashboard Rule to Password Only
 
 1. In the **Okta Administrator Console** open the **Security** dropdown and then **Authentication Policies** 
 2. Select **App Sign-In** then open **Okta Dashboard**
@@ -644,7 +644,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 ### Create Session Policy
 
 1. In the **Okta Administrator Console** open the **Security** dropdown and then **Global Session Policy** 
-2. Press **Add Policy** then create a policy with the following information the **Create Policy and Add Rule:**
+2. Press **Add Policy** then create a policy with the following information then **Create Policy and Add Rule:**
 
    - **Policy Name:** Kennon Test Session Policy
    - **Policy Description:** Zone based MFA and session lengths for test users
@@ -720,7 +720,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Inside the Zone
 
-1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+1. Log in to **Okta** as **Jordan Ellis** in an **incognito** browser
 2. Confirm that **Password** is the only verification type that it asks for then **Sign Out**
 
 <p align="center">
@@ -736,14 +736,14 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2079.png" alt="Image 79">
 </p>
 
-3. On your phone with wifi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+3. On your phone with WiFi off attempt to log in to **Okta** as **Jordan Ellis** in an **incognito** browser
 4. Confirm that both the **Password** and **Email Verification** are required when logging in then **Sign Out**
 
 <p align="center">
   <img src="Images/Image%2080.webp" alt="Image 80" width="300">>
 </p>
 
-### Another Test
+### Test Morgan Inside the Zone
 
 1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
 2. Confirm that both **Password** and **Okta Verify** are required when logging in then **Sign Out**
@@ -752,7 +752,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2081.PNG" alt="Image 81">
 </p>
 
-### Verify In System Logs
+### Verify In System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
 2. Search for policy creation events to confirm the session policy was created:
@@ -825,9 +825,9 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 </p>
 
    - **Then**
-   - **Then Access is:** Allowed after successful authenticaion
+   - **Then Access is:** Allowed after successful authentication
    - **User Must Authenticate with:** Any 2 factor types
-   - **Authentication Methods:** Disallow specific authentication Email
+   - **Authentication Methods:** Disallow specific authentication: Email
 
 <p align="center">
   <img src="Images/Image%2091.PNG" alt="Image 91">
@@ -861,7 +861,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 </p>
 
    - **Then**
-   - **Then Access is:** Allowed after successful authenticaion
+   - **Then Access is:** Allowed after successful authentication
    - **User Must Authenticate with:** Any 2 factor types
    - **Authentication Methods:** Allow any method that can be used to meet the requirement
 
@@ -889,6 +889,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2097.PNG" alt="Image 97">
 </p>
 
+   - **Then**
    - **Then Access is:** Allowed after successful authentication
    - **User Must Authenticate with:** Password
 
@@ -896,7 +897,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2098.PNG" alt="Image 98">
 </p>
 
-3. Confirm that **HighSecurity Intranet Rule** is priority 1, **Standard Inside HQ Rule** is priority 2, **Standard Outsude HQ Rule** is priority 3, and the **Catch-All Rule** is priority 4
+3. Confirm that **HighSecurity Intranet Rule** is priority 1, **Standard Inside HQ Rule** is priority 2, **Standard Outside HQ Rule** is priority 3, and the **Catch-all Rule** is priority 4
 
 <p align="center">
   <img src="Images/Image%2099.PNG" alt="Image 99"> <br>
@@ -907,13 +908,13 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 ### Assign Policy to Kennon Intranet
 
 1. In the **Kennon Intranet Policy** open the **Apps** tab then **Add App**
-2. Find **Kennon Intranet** then press *Add** then **Done**
+2. Find **Kennon Intranet** then press **Add** then **Done**
 
 <p align="center">
   <img src="Images/Image%20102.PNG" alt="Image 102">
 </p>
 
-3. Open the **Applications and Resources** dropdown the **Applications**
+3. Open the **Applications and Resources** dropdown then **Applications**
 4. Select **Kennon Intranet** then open the **Sign On** tab
 5. Confirm **User Authentication** shows **Kennon Intranet Policy**
 
@@ -923,7 +924,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Morgan Reyes
 
-1. Log in to **Okta** as **Morgan Reyes** in an **Incgonito** browser
+1. Log in to **Okta** as **Morgan Reyes** in an **incgonito** browser
 2. On **Morgan's Dashboard** select **Kennon Intranet**
 3. Confirm **Okta Verify** is prompted before being taken to example.com
 
@@ -931,7 +932,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%20104.PNG" alt="Image 104">
 </p>
 
-4. Close the **exmaple.com** tab then on **Morgan's Dashboard** open **Kennon Intranet** again
+4. Close the **example.com** tab then on **Morgan's Dashboard** open **Kennon Intranet** again
 5. Confirm **Okta Verify** is prompted again
 
 <p align="center">
@@ -942,16 +943,16 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ### Test Jordan Inside and Outside the Zone
 
-1. Log in to **Okta** as **Jordan Ellis** in an **Incgonito** browser
+1. Log in to **Okta** as **Jordan Ellis** in an **incgonito** browser
 2. On **Jordan's Dashboard** open **Kennon Intranet**
 3. Confirm it opens without any additional verification necessary
 4. **Sign Out** of Jordan Ellis's account
-5. On your phone disconnect from Wi-Fi then log into **Jordan Ellis's** account in an **Incognito** browser
+5. On your phone turn off Wi-Fi then log into **Jordan Ellis's** account in an **Incognito** browser
 6. On **Jordan's Dashboard** open **Kennon Intranet**
 7. Confirm it opens without any additional verification necessary
 
 <p align="center">
-  <img src="Images/Image%20106.webp" alt="Image 106" width="300">>
+  <img src="Images/Image%20106.webp" alt="Image 106">
 </p>
 
 ### Verify in System Log
@@ -1025,7 +1026,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 
 ---
 
-## Phase 7: Test Matrix Summary
+## 7) Test Matrix Summary
 
 The table below combines every sign in tested in this lab, showing what each user was asked for and which rules Okta matched.
 
@@ -1047,7 +1048,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 ### Remove the Kennon Intranet Policy
 
 1. In the **Okta Administrator Console** open the **Applications and Resources** dropdown and then **Applications**
-2. Select the **Kennon Intranet App** then open the **Sign On** tab
+2. Select the **Kennon Intranet** app then open the **Sign On** tab
 3. Under **User Authentication** press **Edit**
 4. Switch the policy to **Any Two Factors** then **Save**
 
@@ -1065,7 +1066,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 ### Remove the Session Policy
 
 1. Open the **Security** dropdown and then **Global Session Policy**
-2. Next to the **Kennon Test Session Policy** open the **Active** dopdown and select **Deactivate**
+2. Next to the **Kennon Test Session Policy** open the **Active** dropdown and select **Deactivate**
 3. Press **Delete**
 
 <p align="center">
@@ -1148,7 +1149,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
 
 ### Remove Test Users
 
-1. Open the **Directory** dropdown then **People** then open **Morgan Reyes** profile
+1. Open the **Directory** dropdown then **People** then open **Morgan Reyes's** profile
 2. Open the **More Actions** dropdown then **Deactivate**
 3. Then press **Delete**
 
@@ -1156,7 +1157,7 @@ Morgan required Okta Verify inside Kennon HQ even though the session rule requir
   <img src="Images/Image%20130.png" alt="Image 130">
 </p>
 
-4. Open **Jordan Ellis** profile then open the **More Actions** dropdown then **Deactivate**
+4. Open **Jordan Ellis's** profile then open the **More Actions** dropdown then **Deactivate**
 5. Then press **Delete**
 
 <p align="center">
