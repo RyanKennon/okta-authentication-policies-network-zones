@@ -514,7 +514,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2054.PNG" alt="Image 54">
 </p>
 
-### Verify in System Logs
+### Verify in System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown then **System Log**
 2. Search for policy creation events to confirm both enrollment policies were created:
@@ -608,7 +608,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2065.png" alt="Image 65">
 </p>
 
-4. On your phone with WiFi off attempt to log in to **Okta** as **Jordan Ellis** in an **Incognito** browser. The sign in is refused with a permission error
+4. On your phone with WiFi off attempt to log in to **Okta** as **Jordan Ellis** in an **incognito** browser. The sign in is refused with a permission error
 
 <p align="center">
   <img src="Images/Image%2066.webp" alt="Image 66">
@@ -752,7 +752,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
   <img src="Images/Image%2081.PNG" alt="Image 81">
 </p>
 
-### Verify In System Log
+### Verify in System Log
 
 1. In the **Okta Administrator Console** open the **Reports** dropdown and then **System Log**
 2. Search for policy creation events to confirm the session policy was created:
@@ -947,7 +947,7 @@ This lab builds a layered authentication setup for the fictional company Kennon 
 2. On **Jordan's Dashboard** open **Kennon Intranet**
 3. Confirm it opens without any additional verification necessary
 4. **Sign Out** of Jordan Ellis's account
-5. On your phone turn off WiFi then log into **Jordan Ellis's** account in an **Incognito** browser
+5. On your phone turn off WiFi then log into **Jordan Ellis's** account in an **incognito** browser
 6. On **Jordan's Dashboard** open **Kennon Intranet**
 7. Confirm it opens without any additional verification necessary
 
